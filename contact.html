@@ -109,6 +109,29 @@
           <span class="error-msg">Please enter a valid South African phone number.</span>
         </div>
 
+        <div class="field" data-field>
+          <label for="c-type">Type of message</label>
+          <select id="c-type" name="type" required>
+            <option value="" selected disabled>Select a type</option>
+            <option value="General question">General question</option>
+            <option value="Booking change">Change or cancel a booking</option>
+            <option value="Price / service question">Price or service question</option>
+            <option value="Feedback">Feedback</option>
+            <option value="Collaboration">Collaboration / partnership</option>
+          </select>
+          <span class="error-msg">Please choose the type of message.</span>
+        </div>
+
+        <div class="field" data-field>
+          <label for="c-message">Message</label>
+          <textarea id="c-message" name="message" placeholder="How can Keora help?" required minlength="10" maxlength="600" data-rule="message"></textarea>
+          <span class="error-msg">Please write a message (at least 10 characters).</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Send</button>
+        <div class="form-success" id="contact-success" role="status" aria-live="polite" tabindex="-1"></div>
+      </form>
+    </section>
  
   
   
