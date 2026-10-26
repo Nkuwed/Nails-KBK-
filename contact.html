@@ -76,5 +76,27 @@
   </div>
 </div>
 
+<main>
+  <div class="wrap">
+
+    <section>
+      <span class="eyebrow">Get in touch</span>
+      <h1>Contact</h1>
+      <div class="swipe"></div>
+    </section>
+
+    <!-- Small contact form per wireframe (Name / Email / Message + Send) -->
+    <section>
+      <h2>Send a message</h2>
+      <!-- Validated in js/main.js. On a valid submit the details are compiled into an
+           email (mailto:) addressed to the studio so the visitor can send it. -->
+      <form id="contact-form" novalidate data-form="contact" action="#" method="post">
+        <div class="field" data-field>
+          <label for="c-name">Name</label>
+          <input type="text" id="c-name" name="name" placeholder="Your name" required minlength="2" maxlength="60" autocomplete="name" data-rule="name">
+          <span class="error-msg">Please enter your name.</span>
+        </div>
+
+ 
   
   
