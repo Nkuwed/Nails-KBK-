@@ -132,6 +132,25 @@
         <div class="form-success" id="contact-success" role="status" aria-live="polite" tabindex="-1"></div>
       </form>
     </section>
- 
-  
+
+    <!-- ============ MAP ============ -->
+    <section aria-labelledby="map-title">
+      <h2 id="map-title">Find the studio</h2>
+      <p class="map-note">Tap a pin for directions, or use the buttons to jump between places.</p>
+      <div class="chip-row map-controls" role="group" aria-label="Map locations">
+        <button type="button" class="chip active" data-map-focus="all">Show both</button>
+        <button type="button" class="chip" data-map-focus="studio">Studio · Kibler Park</button>
+        <button type="button" class="chip" data-map-focus="landmark">Landmark · Southgate</button>
+      </div>
+      <!-- js/map.js draws the Leaflet map into #map. The iframe below is only used when JavaScript is off. -->
+      <div class="map-frame" id="map" role="region" aria-label="Map showing the studio area in Kibler Park and the nearby Southgate Shopping Centre">
+        <noscript>
+          <iframe title="KreatedByKeora studio location — Kibler Park, Johannesburg" src="https://www.google.com/maps?q=Kibler+Park,+Johannesburg,+South+Africa&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </noscript>
+      </div>
+    </section>
+
+
+
+    
   
