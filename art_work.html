@@ -80,7 +80,22 @@
       <p>A showcase of nail designs, colours and styles created in the studio — a taste of what's possible for your next set. Tap any photo to view it larger.</p>
     </section>
 
-
+   <!-- Each photo is a <button> so keyboard users can open it too. Clicking opens
+         the lightbox (js/lightbox.js): a large, scrollable, zoomable view with
+         previous/next. data-full = the full-size file, the <picture> thumbnails (WebP with JPG fallback, 480w/960w)
+         so the grid loads quickly. -->
+    <section id="manicures" aria-labelledby="manicures-title">
+      <h2 id="manicures-title" class="gallery-heading">Manicures</h2>
+      <div class="gallery-grid">
+        <div class="thumb" id="art-1">
+          <button type="button" class="thumb-open" data-lightbox-item data-full="images/portfolio/blue-chrome-almond-nails.jpg" data-caption="Blue chrome almond nails">
+            <picture>
+              <source type="image/webp" srcset="images/portfolio/thumbs/blue-chrome-almond-nails-480.webp 480w, images/portfolio/thumbs/blue-chrome-almond-nails-960.webp 960w" sizes="(min-width: 1120px) 265px, (min-width: 860px) 25vw, (min-width: 600px) 33vw, 50vw">
+              <img src="images/portfolio/thumbs/blue-chrome-almond-nails-480.jpg" srcset="images/portfolio/thumbs/blue-chrome-almond-nails-480.jpg 480w, images/portfolio/thumbs/blue-chrome-almond-nails-960.jpg 960w" sizes="(min-width: 1120px) 265px, (min-width: 860px) 25vw, (min-width: 600px) 33vw, 50vw" width="480" height="638" alt="Almond nails in blue chrome with silver French tips" loading="lazy" decoding="async">
+            </picture>
+          </button>
+        </div>
+ 
 
 
 
