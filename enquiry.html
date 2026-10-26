@@ -44,6 +44,18 @@
     </div>
   </div>
 </header>
+<!-- ============ SITE SEARCH PANEL (opened by the magnifier in the header; logic in js/search.js) ============ -->
+<div class="search-panel" id="search-panel" data-search-panel hidden>
+  <div class="wrap">
+    <form class="search-form" role="search" data-search-form novalidate>
+      <label class="sr-only" for="site-search">Search the KreatedByKeora website</label>
+      <input type="search" id="site-search" name="q" placeholder="Search services, prices, art work…" autocomplete="off" data-search-input>
+      <button type="button" class="search-close" aria-label="Close search" data-search-close>&times;</button>
+    </form>
+    <p class="search-status" role="status" aria-live="polite" data-search-status>Search services, prices, policies, art work and more.</p>
+    <ul class="search-results" data-search-results></ul>
+  </div>
+</div>
 
 
       
