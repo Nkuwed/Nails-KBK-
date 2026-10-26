@@ -102,6 +102,52 @@
           <input type="email" id="email" name="email" placeholder="e.g. lerato@email.com" required autocomplete="email" data-rule="email">
           <span class="error-msg">Please enter a valid email address.</span>
         </div>
+ <div class="field" data-field>
+          <label for="service">Preferred Service</label>
+          <select id="service" name="service" required>
+            <option value="" selected disabled>Select a service</option>
+            <option value="classic-manicure">Classic Manicure — from R150</option>
+            <option value="gel-x">Gel-X Extensions — from R350</option>
+            <option value="custom-nail-art">Custom Nail Art — from R450</option>
+            <option value="gel-overlay">Gel Overlay — from R250</option>
+            <option value="pedicure">Pedicure — from R200</option>
+            <option value="not-sure">Not sure yet</option>
+          </select>
+          <span class="error-msg">Please select a service.</span>
+        </div>
+
+        <div class="field" data-field>
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="date" required data-rule="booking-date">
+          <span class="error-msg">Please choose a preferred date.</span>
+        </div>
+
+       <div class="field">
+          <label for="reference">Reference Image (optional)</label>
+          <input type="file" id="reference" name="reference" accept="image/*" class="file-input">
+        </div>
+
+        <div class="field" data-field>
+          <label for="message">Message / Details</label>
+          <textarea id="message" name="message" placeholder="Tell Keora about the design, nail length or anything else she should know" required minlength="10" maxlength="600" data-rule="message"></textarea>
+          <span class="error-msg">Please add a short message (at least 10 characters) so Keora knows what you'd like.</span>
+        </div>
+
+        <!-- Accordion (native <details>): tap a heading to open / close a policy -->
+        <div class="accordion" id="policies" role="group" aria-label="Booking policies">
+          <details>
+            <summary>Deposit</summary>
+            <p>A non-refundable deposit is required to confirm every booking and is deducted from your final price.</p>
+          </details>
+          <details>
+            <summary>Late arrivals</summary>
+            <p>Arrivals more than 15 minutes late may be asked to rebook or a late fee may apply.</p>
+          </details>
+          <details>
+            <summary>Cancellations</summary>
+            <p>Cancellations made less than 24 hours before your appointment forfeit the deposit.</p>
+          </details>
+        </div>
 
       
 
