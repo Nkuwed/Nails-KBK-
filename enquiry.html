@@ -71,6 +71,37 @@
   </div>
 </div>
 
+<main>
+  <div class="wrap">
+
+    <section>
+      <span class="eyebrow">Booking</span>
+      <h1>Book / Enquire</h1>
+      <div class="swipe"></div>
+      <p>Fill in your details and Keora will confirm your appointment by WhatsApp or email.</p>
+    </section>
+
+    <section>
+      <!-- Validated in js/main.js (client-side) and submitted with fetch() (AJAX) — no page reload. -->
+      <form id="booking-form" novalidate data-form="enquiry" action="#" method="post">
+
+        <div class="field" data-field>
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="fullName" placeholder="e.g. Lerato Dlamini" required minlength="2" maxlength="60" autocomplete="name" data-rule="name">
+          <span class="error-msg">Please enter your full name.</span>
+        </div>
+
+        <div class="field" data-field>
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. 082 123 4567" required inputmode="tel" autocomplete="tel" data-rule="sa-phone">
+          <span class="error-msg">Please enter a valid South African phone number.</span>
+        </div>
+
+        <div class="field" data-field>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="e.g. lerato@email.com" required autocomplete="email" data-rule="email">
+          <span class="error-msg">Please enter a valid email address.</span>
+        </div>
 
       
 
