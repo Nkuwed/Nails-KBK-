@@ -711,6 +711,31 @@ form { display: flex; flex-direction: column; gap: var(--space-3); }
 .search-title { font-family: var(--font-display); font-size: var(--step-1); color: var(--blush-soft); }
 .search-text  { font-size: var(--step--1); color: #d8cdd3; }
 .search-result mark { background: rgba(241, 196, 214, 0.28); color: var(--blush); border-radius: 3px; padding: 0 2px; }
+/* ---------- 16.3 Gallery: photos are buttons that open the lightbox ---------- */
+.thumb-open {
+  display: block;
+  width: 100%; height: 100%;
+  padding: 0;
+  cursor: zoom-in;
+}
+.thumb-open:focus-visible { outline: 3px solid var(--blush); outline-offset: -3px; }
+.thumb-open::after {                 /* little "enlarge" hint on hover/focus */
+  content: "⤢";
+  position: absolute;
+  right: 8px; top: 8px;
+  width: 30px; height: 30px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: rgba(24, 19, 26, 0.75);
+  color: var(--blush-soft);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.thumb-open:hover::after,
+.thumb-open:focus-visible::after { opacity: 1; }
+
+.gallery-heading { margin-bottom: var(--space-2); }
+
 
 
 
