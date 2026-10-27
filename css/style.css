@@ -867,6 +867,16 @@ body.lightbox-open { overflow: hidden; }   /* page behind does not scroll */
 .accordion summary:focus-visible { box-shadow: 0 0 0 3px rgba(199, 154, 123, 0.35); border-radius: var(--radius-m); }
 .accordion details p { padding: 0 var(--space-3) var(--space-3); }
 
+/* ---------- 16.6 Small-screen / tablet / desktop tweaks for the additions ---------- */
+@media (max-width: 599px) {
+  .lightbox-nav { top: auto; bottom: 4.5rem; transform: none; }   /* thumb-reachable on phones */
+  .search-title { font-size: var(--step-0); }
+}
+@media (min-width: 860px) {
+  .search-panel .wrap { max-width: 720px; }
+  .lightbox-prev { left: var(--space-4); }
+  .lightbox-next { right: var(--space-4); }
+}
 
 
 
