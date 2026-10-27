@@ -84,6 +84,22 @@
     </section>
 
 
+<section aria-labelledby="service-list-title">
+      <h2 id="service-list-title" class="sr-only">Service list</h2>
+<!-- Search + filter, per wireframe: type to narrow the list, or pick a category chip -->
+    <div class="field service-search">
+      <label class="sr-only" for="service-search">Search services</label>
+      <input type="search" id="service-search" placeholder="Search services, e.g. gel, french, R250…" autocomplete="off" data-service-search>
+    </div>
+    
+      <div class="chip-row" data-filter-row>
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="manicure">Manicures</button>
+        <button class="chip" data-filter="gel-x">Gel-X</button>
+        <button class="chip" data-filter="nail-art">Nail Art</button>
+        <button class="chip" data-filter="pedicure">Pedicures</button>
+      </div>
+
 
 
 
