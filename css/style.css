@@ -198,6 +198,59 @@ main > .wrap > * + section {
 }
 
 
+/* ---------- 5. MOBILE DRAWER ---------- */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.drawer.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(78vw, 320px);
+  background: var(--charcoal-raised);
+  border-left: 1px solid var(--charcoal-line);
+  padding: var(--space-4) var(--space-3);
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+}
+
+.drawer.is-open .drawer-panel { transform: translateX(0); }
+
+.drawer-close {
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--blush-soft);
+  margin-bottom: var(--space-3);
+}
+
+.drawer nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.drawer nav a {
+  padding: var(--space-2);
+  border-radius: var(--radius-s);
+  color: var(--cream);
+  font-weight: 500;
+}
+.drawer nav a:hover,
+.drawer nav a:focus-visible { background: var(--charcoal-line); color: var(--blush-soft); }
+
 
 
 
