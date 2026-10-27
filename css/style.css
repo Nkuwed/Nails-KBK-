@@ -61,6 +61,76 @@ html { -webkit-text-size-adjust: 100%; }
 }
 
 
+/* ---------- 3. BASE ---------- */
+body {
+  background: var(--charcoal);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--blush-soft);
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+h1 { font-size: var(--step-3); margin-bottom: var(--space-2); }
+h2 { font-size: var(--step-2); }
+h3 { font-size: var(--step-1); margin-bottom: var(--space-1); }
+h4 { font-size: var(--step-0); color: var(--rose-gold); }
+.pillar h3, .policy-item h3 { font-size: var(--step-0); color: var(--rose-gold); margin-bottom: 4px; }
+.story-block h2 { font-size: var(--step-1); margin-bottom: var(--space-1); }
+
+p { max-width: 62ch; color: #e7dde3; }
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap-max);
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+main {
+  display: block;
+  padding-top: var(--space-4);
+}
+
+main > .wrap > section,
+main > .wrap > * + section {
+  margin-bottom: var(--space-5);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--step--1);
+  color: var(--rose-gold);
+  margin-bottom: var(--space-1);
+}
+
+.swipe {
+  width: 56px;
+  height: 3px;
+  background: var(--rose-gold);
+  border-radius: 999px;
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+/* ---------- 4. HEADER / NAV ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(24, 19, 26, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--charcoal-line);
+}
+
+
+
 
 
 
