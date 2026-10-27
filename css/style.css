@@ -736,6 +736,44 @@ form { display: flex; flex-direction: column; gap: var(--space-3); }
 
 .gallery-heading { margin-bottom: var(--space-2); }
 
+/* ---------- 16.4 Lightbox overlay ---------- */
+body.lightbox-open { overflow: hidden; }   /* page behind does not scroll */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;                      /* above header, search and drawer */
+  display: flex;
+  flex-direction: column;
+  background: #0a070c;
+  animation: lb-fade 0.2s ease-out;
+}
+.lightbox[hidden] { display: none; }
+@keyframes lb-fade { from { opacity: 0; } to { opacity: 1; } }
+
+.lightbox-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-1) var(--space-3);
+  color: var(--blush-soft);
+  font-size: var(--step--1);
+}
+.lightbox-tools { display: flex; align-items: center; gap: var(--space-1); }
+
+.lightbox-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--charcoal-line);
+  border-radius: 999px;
+  color: var(--blush-soft);
+  font-size: var(--step--1);
+  font-weight: 600;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.lightbox-btn:hover,
+.lightbox-btn:focus-visible { background: var(--charcoal-line); border-color: var(--rose-gold); outline: none; }
+.lightbox-close { font-size: 1.6rem; line-height: 1; padding: 0.15rem 0.8rem; }
+
 
 
 
