@@ -906,6 +906,18 @@ body.lightbox-open { overflow: hidden; }   /* page behind does not scroll */
 .poster-grid img { width: 100%; height: auto; border-radius: var(--radius-m); }
 @media (min-width: 600px) { .poster-grid { grid-template-columns: repeat(3, 1fr); } }
 
+/* ---------- 16.8 Contact page: interactive Leaflet map ---------- */
+.map-note { color: #a99aa3; font-size: var(--step--1); margin: 4px 0 var(--space-2); }
+.map-controls { margin-bottom: var(--space-2); }
+.map-controls .chip { cursor: pointer; }
+.map-frame { background: var(--charcoal-raised); aspect-ratio: 4 / 3; }   /* taller on phones so the map is usable */
+@media (min-width: 600px) { .map-frame { aspect-ratio: 16 / 10; } }
+.map-frame .leaflet-container { width: 100%; height: 100%; font-family: var(--font-body); }
+.map-popup strong { display: block; color: var(--charcoal); font-family: var(--font-display); font-size: var(--step-0); margin-bottom: 2px; }
+.map-popup p { color: #3b3340; font-size: var(--step--1); line-height: 1.4; margin: 0 0 6px; }
+.map-popup a { color: #8a4f6a; font-weight: 700; text-decoration: underline; }
+@media (min-width: 860px) { .map-frame { aspect-ratio: 21 / 9; } }
+
 
 
 
