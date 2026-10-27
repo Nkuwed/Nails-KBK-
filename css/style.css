@@ -317,6 +317,31 @@ main > .wrap > * + section {
   margin-top: var(--space-3);
 }
 
+/* ---------- 8. CHIPS / FILTERS ---------- */
+.chip-row {
+  display: flex;
+  gap: var(--space-1);
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+.chip-row::-webkit-scrollbar { display: none; }
+
+.chip {
+  flex: 0 0 auto;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--charcoal-line);
+  color: #d8cdd3;
+  font-size: var(--step--1);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.chip:hover,
+.chip:focus-visible { border-color: var(--rose-gold); color: var(--blush-soft); }
+.chip.active { background: var(--blush); color: var(--charcoal); border-color: var(--blush); }
+
 
 
 
