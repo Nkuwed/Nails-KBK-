@@ -508,6 +508,40 @@ form { display: flex; flex-direction: column; gap: var(--space-3); }
 }
 .privacy-note strong { color: var(--blush-soft); }
 
+/* ---------- 11. CONTACT PAGE ---------- */
+.map-frame {
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  border: 1px solid var(--charcoal-line);
+  aspect-ratio: 16 / 10;
+}
+.map-frame iframe { width: 100%; height: 100%; border: 0; }
+
+.contact-list { display: flex; flex-direction: column; gap: var(--space-2); margin-bottom: var(--space-3); }
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: #e7dde3;
+}
+.contact-list svg { flex: 0 0 auto; color: var(--rose-gold); }
+
+.social-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-2); }
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid var(--charcoal-line);
+  color: var(--blush-soft);
+  font-weight: 600;
+  font-size: var(--step--1);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.social-btn:hover,
+.social-btn:focus-visible { border-color: var(--rose-gold); }
+.social-btn.whatsapp { background: rgba(127, 185, 154, 0.15); border-color: var(--success); color: var(--success); }
 
 
 
