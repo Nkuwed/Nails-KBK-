@@ -251,6 +251,40 @@ main > .wrap > * + section {
 .drawer nav a:hover,
 .drawer nav a:focus-visible { background: var(--charcoal-line); color: var(--blush-soft); }
 
+/* ---------- 6. BUTTONS ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: var(--step-0);
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--blush);
+  color: var(--charcoal);
+}
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--rose-gold);
+  color: var(--charcoal);
+}
+.btn-primary:active { transform: scale(0.98); }
+
+.btn-outline {
+  border: 1.5px solid var(--rose-gold);
+  color: var(--blush-soft);
+}
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background: var(--rose-gold);
+  color: var(--charcoal);
+}
+
+.btn-block { display: flex; width: 100%; }
 
 
 
