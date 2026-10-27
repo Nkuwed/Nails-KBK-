@@ -833,6 +833,39 @@ body.lightbox-open { overflow: hidden; }   /* page behind does not scroll */
 .lightbox-nav:focus-visible { background: var(--charcoal-line); border-color: var(--rose-gold); outline: none; }
 .lightbox-prev { left: var(--space-1); }
 .lightbox-next { right: var(--space-1); }
+/* ---------- 16.5 Accordion (enquiry page policies) ---------- */
+.accordion { display: grid; gap: var(--space-1); }
+.accordion details {
+  background: var(--charcoal-raised);
+  border: 1px solid var(--charcoal-line);
+  border-radius: var(--radius-m);
+  transition: border-color 0.15s ease;
+}
+.accordion details[open] { border-color: var(--rose-gold-dim); }
+.accordion summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-display);
+  color: var(--blush-soft);
+  font-size: var(--step-1);
+}
+.accordion summary::-webkit-details-marker { display: none; }
+.accordion summary::after {
+  content: "+";
+  color: var(--rose-gold);
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+}
+.accordion details[open] summary::after { transform: rotate(45deg); }
+.accordion summary:hover,
+.accordion summary:focus-visible { color: var(--blush); outline: none; }
+.accordion summary:focus-visible { box-shadow: 0 0 0 3px rgba(199, 154, 123, 0.35); border-radius: var(--radius-m); }
+.accordion details p { padding: 0 var(--space-3) var(--space-3); }
 
 
 
