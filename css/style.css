@@ -342,6 +342,36 @@ main > .wrap > * + section {
 .chip:focus-visible { border-color: var(--rose-gold); color: var(--blush-soft); }
 .chip.active { background: var(--blush); color: var(--charcoal); border-color: var(--blush); }
 
+/* ---------- 9. GRIDS / CARDS ---------- */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+.see-all { color: var(--rose-gold); font-weight: 600; font-size: var(--step--1); }
+.see-all:hover, .see-all:focus-visible { color: var(--blush); }
+
+.grid-3, .grid-2, .gallery-grid {
+  display: grid;
+  gap: var(--space-2);
+}
+.grid-3 { grid-template-columns: repeat(2, 1fr); }
+.grid-2 { grid-template-columns: 1fr; }
+.gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
+.thumb {
+  position: relative;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  background: var(--charcoal-raised);
+  aspect-ratio: 1 / 1;
+}
+.thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+/* <picture> wrappers must fill the thumbnail box so object-fit: cover can centre-crop the photo */
+.thumb picture, .thumb-open picture { width: 100%; height: 100%; }
+.thumb:hover img { transform: scale(1.05); }
+
 
 
 
