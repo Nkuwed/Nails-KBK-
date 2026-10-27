@@ -479,6 +479,50 @@ form { display: flex; flex-direction: column; gap: var(--space-3); }
 .file-input { padding: 0.6rem 1rem; }
 
 
+.error-msg {
+  display: none;
+  color: var(--error);
+  font-size: var(--step--1);
+}
+.field.is-invalid .error-msg { display: block; }
+.field.is-invalid input,
+.field.is-invalid select,
+.field.is-invalid textarea { border-color: var(--error); }
+
+.form-success {
+  display: none;
+  background: rgba(127, 185, 154, 0.15);
+  border: 1px solid var(--success);
+  color: var(--success);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-s);
+}
+.form-success.is-visible { display: block; }
+
+.privacy-note {
+  font-size: var(--step--1);
+  color: #a99aa3;
+  border: 1px dashed var(--charcoal-line);
+  border-radius: var(--radius-s);
+  padding: var(--space-2);
+}
+.privacy-note strong { color: var(--blush-soft); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
