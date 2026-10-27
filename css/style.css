@@ -575,6 +575,32 @@ form { display: flex; flex-direction: column; gap: var(--space-3); }
   .pillars, .policy-list { grid-template-columns: repeat(2, 1fr); }
   .hero-media img { height: 46vw; }
 }
+/* ---------- 15. RESPONSIVE: DESKTOP (≥860px) ---------- */
+@media (min-width: 860px) {
+  :root {
+    --step-3: 2.75rem;
+    --step-4: 3.4rem;
+  }
+
+  .top-links { display: flex; align-items: center; gap: 2px; }
+  .menu-toggle { display: none; }
+
+  .hero {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: var(--space-5);
+  }
+  .hero-media, .hero-copy { flex: 1; }
+  .hero-media img { height: 480px; }
+
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-2 { grid-template-columns: repeat(3, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+
+  form { max-width: 640px; }
+
+  .contact-list li { font-size: var(--step-0); }
+}
 
 
 
