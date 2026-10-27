@@ -424,6 +424,24 @@ main > .wrap > * + section {
   padding: var(--space-3);
 }
 
+.policy-list {
+  display: grid;
+  gap: var(--space-2);
+  grid-template-columns: 1fr;
+}
+.policy-item {
+  border-left: 3px solid var(--rose-gold);
+  padding-left: var(--space-2);
+}
+
+.story-block { margin-bottom: var(--space-4); }
+
+.gallery-note {
+  color: #a99aa3;
+  margin-bottom: var(--space-3);
+  font-size: var(--step--1);
+}
+
 
 
 
