@@ -878,7 +878,33 @@ body.lightbox-open { overflow: hidden; }   /* page behind does not scroll */
   .lightbox-next { right: var(--space-4); }
 }
 
+/* ---------- 16.7 Form response, services search, price-list posters ---------- */
+.form-success strong { color: var(--success); }
+.form-success p { color: #d6efe2; margin-top: var(--space-1); }
+.form-success .btn { margin-top: var(--space-2); }
+.form-success:focus { outline: none; }
+.result-list { margin-top: var(--space-1); display: grid; gap: 6px; }
+.result-list li { color: #d6efe2; font-size: var(--step--1); }
+.result-list strong { color: var(--cream); }
 
+.service-search { margin-bottom: var(--space-2); }
+.service-search input[type="search"] {
+  background: var(--charcoal-raised);
+  border: 1px solid var(--charcoal-line);
+  border-radius: 999px;
+  padding: 0.75rem 1.1rem;
+  color: var(--cream);
+}
+.service-search input[type="search"]:hover { border-color: var(--rose-gold-dim); }
+.service-search input[type="search"]:focus {
+  outline: none;
+  border-color: var(--rose-gold);
+  box-shadow: 0 0 0 3px rgba(199, 154, 123, 0.25);
+}
+
+.poster-grid { display: grid; gap: var(--space-2); margin-top: var(--space-3); grid-template-columns: 1fr; }
+.poster-grid img { width: 100%; height: auto; border-radius: var(--radius-m); }
+@media (min-width: 600px) { .poster-grid { grid-template-columns: repeat(3, 1fr); } }
 
 
 
