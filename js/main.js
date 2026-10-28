@@ -157,4 +157,22 @@ document.addEventListener('DOMContentLoaded', () => {
     return message === '';
   }
 
+  // Pretend-or-real network call. If the <form> has data-endpoint="https://..."
+  // the data is POSTed there as JSON; without one (as now) the call is
+  // simulated so the page behaves exactly the same.
+  async function sendAjax(form, payload) {
+    const endpoint = form.dataset.endpoint;
+    if (endpoint) {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Server responded ' + res.status);
+      return res.json().catch(() => ({}));
+    }
+    await new Promise((resolve) => setTimeout(resolve, 600));   // short "sending…" pause
+    return { ok: true };
+  }
+
 
