@@ -238,6 +238,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- Enquiry answer: estimate, deposit and availability -----------------
+  function showEnquiryResponse(box, d) {
+    const svc = SERVICE_PRICES[d.service] || SERVICE_PRICES['not-sure'];
+    const when = new Date(d.date + 'T00:00:00').toLocaleDateString('en-ZA',
+      { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    const firstName = d.fullName.split(' ')[0];
+
+    // Saturdays book up fastest, so say so; other days are "open".
+    const isSat = new Date(d.date + 'T00:00:00').getDay() === 6;
+    const availability = isSat
+      ? 'Saturdays fill up quickly — Keora will confirm whether your slot is free.'
+      : 'That day is open for bookings — Keora will confirm your time slot.';
+
+    const priceLine = svc.from
+      ? '<li><strong>Estimate:</strong> ' + svc.name + ' from ' + rand(svc.from) +
+        ' (final price depends on length and design).</li>' +
+        '<li><strong>Deposit:</strong> about ' + rand(Math.round(svc.from / 2)) +
+        ' (50% of the “from” price) secures your slot and is deducted from the final price.</li>'
+      : '<li><strong>Estimate:</strong> Keora will recommend a service and price once she sees your message.</li>';
+
+    box.innerHTML =
+      '<strong>Thank you, ' + escapeHtml(firstName) + '! Your enquiry has been received.</strong>' +
+      '<ul class="result-list">' +
+        '<li><strong>Requested:</strong> ' + escapeHtml(when) + '</li>' +
+        '<li><strong>Availability:</strong> ' + availability + '</li>' +
+        priceLine +
+        '<li><strong>Next step:</strong> Keora will confirm by WhatsApp (' + escapeHtml(d.phone) + ') or email shortly.</li>' +
+      '</ul>';
+  }
+
 
 
 
