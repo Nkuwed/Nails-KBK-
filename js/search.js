@@ -187,6 +187,20 @@ const TYPE_BOOST = { Page: 8, Service: 6, Info: 3 };
       return;
     }
 
+    status.textContent = hits.length + (hits.length === 1 ? ' result' : ' results') + ' for “' + query + '”';
+
+    hits.forEach(({ entry }) => {
+      const li = document.createElement('li');
+      li.innerHTML =
+        '<a href="' + entry.url + '" class="search-result">' +
+          '<span class="search-type">' + escapeHtml(entry.type) + '</span>' +
+          '<span class="search-title">' + highlight(entry.title, words) + '</span>' +
+          '<span class="search-text">' + highlight(entry.text, words) + '</span>' +
+        '</a>';
+      results.appendChild(li);
+    });
+  }
+
 
 
 
