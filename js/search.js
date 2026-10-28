@@ -115,6 +115,18 @@
     { type: 'Art Work', title: 'French pedicure — flower sandals', url: 'art_work.html#art-20', text: 'Pedicure · white French tips with floral flip-flops.', keywords: 'french pedicure toes white flower flip flops' }
   ];
 
+  /* ---- 2. Grab the elements added to every page's header -------------- */
+  const panel   = document.querySelector('[data-search-panel]');
+  const openBtn = document.querySelector('[data-search-open]');
+  if (!panel || !openBtn) return;               // page has no search markup
+
+  const input   = panel.querySelector('[data-search-input]');
+  const results = panel.querySelector('[data-search-results]');
+  const status  = panel.querySelector('[data-search-status]');
+  const closeBtn = panel.querySelector('[data-search-close]');
+  const form    = panel.querySelector('[data-search-form]');
+
+
 
 
 
