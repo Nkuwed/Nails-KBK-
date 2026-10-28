@@ -1,0 +1,17 @@
+/* ==========================================================================
+   search.js — site-wide search for KreatedByKeora
+   --------------------------------------------------------------------------
+   How it works
+   1. SEARCH_INDEX (below) lists every searchable thing on the site: each page,
+      each service, each policy and each Art Work photo.
+   2. The header on every page has a magnifier button. Clicking it (or
+      pressing "/") opens the search panel that sits under the header.
+   3. As the visitor types, every word they typed must appear somewhere in an
+      entry's title / keywords / description (AND matching). Title matches
+      rank above keyword matches, which rank above description matches.
+   4. Results are plain links. Enter opens the top result, the arrow keys
+      move between results, and Escape closes the panel.
+   Art Work results link to art_work.html#art-N — lightbox.js reads that hash
+   and opens the matching photo in the lightbox straight away.
+   ========================================================================== */
+
