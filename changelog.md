@@ -152,6 +152,4 @@ Worked page by page to redo the code so the JavaScript is working throughout all
   
 - Deploying on GitHub Pages OR Netlify and, update the
 URLs in `sitemap.xml` and `robots.txt` to the live web link.
-- The contact page map is a single embedded Google Map (Kibler Park). The
-  brief asks for more than one location — add a second real location (e.g. a
-  mobile-service area or partner venue) if the studio has one.
+
