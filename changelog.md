@@ -97,23 +97,24 @@ Worked page by page to redo the code so the JavaScript is working throughout all
 - Every photo on `art_work.html` is now a `<button>` that opens a full-screen viewer showing the large image with its caption.
 -  The viewer is **scrollable**: "Full size" shows the image at its real pixel size inside a scroll area so the visitor can scroll/drag around it in both directions; "Fit to screen"
   returns to the whole photo.
--Also added Previous/Next buttons, ← → keys,
-  swipe on touch screens, Esc / × / backdrop-click to close, a "n / 20"
-  counter, a keyboard focus trap, focus returned to the photo on close, and the
+-Also added Previous/Next buttons, ← → keys, swipe on touch screens, Esc / × / backdrop-click to close, a "n / 20" counter, a keyboard focus trap, focus returned to the photo on close, and the
   page behind no longer scrolls while it is open.
-- **Gallery images.** Replaced the 20 generic photos' `alt` text
-  ("Nail art design", "Slight mix of colours") with accurate descriptions;
-  added `loading="lazy"`, `width`/`height` (no layout jump) and responsive
+
+- **Gallery images.**
+- Replaced the 20 generic photos' `alt` text
+  ("Nail art design", "Slight mix of colours") with better descriptions;
+  added `loading="lazy"`, `width`/`height` and responsive
   `srcset` + `sizes` thumbnails (480 px / 960 px, new `images/portfolio/thumbs/`
   folder) so the grid loads fast while the lightbox loads the full-size file.
-The Manicures/Pedicures headings are now proper `<section>`s with ids.
+-The Manicures/Pedicures headings are now proper `<section>`s with ids.
 
 **Rubric review — fixes made so the site meets the Part 1–3 rubric**
 
 - *SEO:* added `<meta name="keywords">`, `author`, `robots` and `referrer` tags
   to every page; added `robots.txt` and `sitemap.xml`; renamed gallery images
   from names like `huh.jpg`, `T1.png`, `mix 3.jpg` to descriptive, hyphenated
-  names (e.g. `red-grid-i-love-me-nails.jpg`) and updated every reference.
+  names and updated every reference.
+  
 - *Forms — enquiry:* rewrote validation (name, South African phone number,
   email, service, date, message length), live error messages that update as
   the visitor corrects a field, `aria-invalid`/`aria-describedby` for screen
@@ -121,36 +122,36 @@ The Manicures/Pedicures headings are now proper `<section>`s with ids.
   the submit uses `fetch()` (AJAX, no page reload) and the reply now shows an
   estimate, the 50 % deposit amount and availability for the chosen
   service/date. Removed the stray `>` from the "Reference Image" label.
+  
 - *Forms — contact:* added the phone number and "Type of message" fields the
   brief asks for, the same validation, and on a valid submit the details are
   compiled into an email addressed to the studio (`mailto:` link built in
   `main.js`, recipient set once in the `CONTACT_EMAIL` constant).
+  
 - *Interactive elements:* the enquiry page policies are now an accordion
   (`<details>`/`<summary>`) with open/close animation; added a live text search
   box to the Services page that works together with the category chips.
+  
 - *Services page:* fixed an unbalanced `</div>` and a second
   `data-service-grid` outside `<main>`; the three price-list/policy posters now
   sit in their own labelled section with alt text and correct proportions
   (they were forced to 400×400); added missing/incorrect `alt` text and swapped
   the Pedicure card's manicure photo for a pedicure photo.
+  
 - *Links:* WhatsApp and call links were inconsistent (`wa.me/0820951275`,
   `tel:+0820951275`, `27000000000` placeholders) — all now use
   `wa.me/27820951275` and `tel:+27820951275`.
+  
 - *About page:* removed a stray image that sat outside any section above the
   page heading.
-- *README:* rebuilt this README (it contained duplicated sections and listed a
-  `form-validation.js` file that does not exist); added student details, goals,
-  features, sitemap, per-part notes, testing evidence and an updated reference
-  list. The changelog is kept here and mirrored in `changelog.md` and
-  `Changelog.docx`.
 
-**Known items still to do (need the student's input)**
 
-- Set the real studio email in `CONTACT_EMAIL` (`js/main.js`) — it is a
-  placeholder (`keora@example.com`).
-- Deploy on GitHub Pages/Netlify (Part 3 requirement) and, if the live address
-  differs from `https://nkuwed.github.io/WEDE5020-kbk-main-PoE/KBK/`, update the
-URLs in `sitemap.xml` and `robots.txt`.
+** Placeholders & etc.
+- The real studio email in `CONTACT_EMAIL` (`js/main.js`) — is a
+  placeholder (`keora@example.com`)
+  
+- Deploying on GitHub Pages OR Netlify and, update the
+URLs in `sitemap.xml` and `robots.txt` to the live web link.
 - The contact page map is a single embedded Google Map (Kibler Park). The
   brief asks for more than one location — add a second real location (e.g. a
   mobile-service area or partner venue) if the studio has one.
