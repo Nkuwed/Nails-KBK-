@@ -45,4 +45,25 @@
       text: 'Gallery of manicure and pedicure designs — tap any photo to view it larger.',
       keywords: 'gallery portfolio photos pictures designs lightbox' },
 
+    /* Services (anchors match the ids on services.html) */
+    { type: 'Service', title: 'Classic Manicure — from R150', url: 'services.html#manicures',
+      text: 'Shape, cuticle care and a clean polish finish.',
+      keywords: 'manicure classic polish cuticle R150 natural nails' },
+    { type: 'Service', title: 'Gel-X Extensions — from R350', url: 'services.html#gel-x',
+      text: 'Lightweight, long-lasting length in your choice of shape.',
+      keywords: 'gel x gelx extensions length shape stiletto almond coffin R350' },
+    { type: 'Service', title: 'Custom Nail Art — from R450', url: 'services.html#nail-art',
+      text: 'Hand-painted, jewelled or dramatic sculptural designs.',
+      keywords: 'nail art custom hand painted jewelled charms chrome design R450' },
+    { type: 'Service', title: 'Gel Overlay — from R250', url: 'services.html#gel-overlay',
+      text: 'Strengthens and glosses your natural nail with gel.',
+      keywords: 'gel overlay strengthen natural nails gloss R250' },
+    { type: 'Service', title: 'Pedicure — from R200', url: 'services.html#pedicures',
+      text: 'Soak, exfoliation and polish for tired feet.',
+      keywords: 'pedicure feet toes toenails soak exfoliation french R200' },
+    { type: 'Service', title: 'Add-on Design — from R50', url: 'services.html',
+      text: 'A single accent nail or extra detail added to any set.',
+      keywords: 'add on addon accent nail extra detail R50' },
+
+
 
