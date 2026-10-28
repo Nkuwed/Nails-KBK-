@@ -165,6 +165,29 @@ const TYPE_BOOST = { Page: 8, Service: 6, Info: 3 };
     return total;
   }
 
+  /* ---- 4. Run a search and draw the results --------------------------- */
+  function runSearch() {
+    const query = input.value.trim();
+    results.innerHTML = '';
+
+    if (query.length < 2) {
+      status.textContent = query ? 'Keep typing…' : 'Search services, prices, policies, art work and more.';
+      return;
+    }
+
+    const words = normalise(query).split(/\s+/).filter(Boolean);
+    const hits = SEARCH_INDEX
+      .map((entry) => ({ entry, score: score(entry, words) }))
+      .filter((h) => h.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 12);
+
+    if (hits.length === 0) {
+      status.textContent = 'No results for “' + query + '”. Try “gel”, “price”, “pedicure” or “deposit”.';
+      return;
+    }
+
+
 
 
 
