@@ -128,3 +128,26 @@
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     }
   });
+
+  // Swipe left/right on touch screens (only when the photo is NOT zoomed,
+  // because then the same gesture is needed to scroll around the image).
+  let touchX = null;
+  stage.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', (e) => {
+    if (touchX === null || box.classList.contains('is-zoomed')) { touchX = null; return; }
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 60) step(dx < 0 ? 1 : -1);
+    touchX = null;
+  });
+
+  /* ---- 6. Deep links from the site search: art_work.html#art-7 -------- */
+  function openFromHash() {
+    const m = /^#art-(\d+)$/.exec(window.location.hash);
+    if (m) {
+      const n = parseInt(m[1], 10) - 1;
+      if (n >= 0 && n < items.length) open(n);
+    }
+  }
+  openFromHash();
+  window.addEventListener('hashchange', () => { if (box.hidden) openFromHash(); });
+})();
