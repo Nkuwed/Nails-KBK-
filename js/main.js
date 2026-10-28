@@ -131,3 +131,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Validate a single .field wrapper; returns true when OK.
+  function validateField(field) {
+    const input = field.querySelector('input, select, textarea');
+    const errorEl = field.querySelector('.error-msg');
+    if (!input) return true;
+
+    const value = input.value.trim();
+    let message = '';
+
+    if (input.required && value === '') {
+      message = errorEl?.dataset.required || errorEl?.textContent || 'This field is required.';
+      if (errorEl && !errorEl.dataset.required) errorEl.dataset.required = message;   // remember the original "required" text
+    } else if (value !== '' && input.dataset.rule && RULES[input.dataset.rule]) {
+      message = RULES[input.dataset.rule](value);
+    }
+
+
