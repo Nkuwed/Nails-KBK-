@@ -65,5 +65,32 @@
       text: 'A single accent nail or extra detail added to any set.',
       keywords: 'add on addon accent nail extra detail R50' },
 
+    /* Policies & info */
+    { type: 'Info', title: 'Deposit policy', url: 'enquiry.html#policies',
+      text: 'A non-refundable deposit confirms every booking and is deducted from your final price.',
+      keywords: 'deposit payment pay non-refundable confirm booking' },
+    { type: 'Info', title: 'Late arrivals', url: 'enquiry.html#policies',
+      text: 'Arrivals more than 15 minutes late may be asked to rebook or a late fee may apply.',
+      keywords: 'late arrival fee rebook running late 15 minutes' },
+    { type: 'Info', title: 'Cancellations', url: 'enquiry.html#policies',
+      text: 'Cancelling less than 24 hours before your appointment forfeits the deposit.',
+      keywords: 'cancel cancellation 24 hours refund forfeit reschedule' },
+    { type: 'Info', title: 'Your privacy (POPIA)', url: 'enquiry.html#policies',
+      text: 'Your details are only used to confirm and manage your appointment.',
+      keywords: 'privacy popia data personal information protection' },
+    { type: 'Info', title: 'Opening hours', url: 'contact.html',
+      text: 'Monday to Saturday, 09:00 – 17:00.',
+      keywords: 'hours open opening times monday saturday when' },
+    { type: 'Info', title: 'Studio location — Kibler Park', url: 'contact.html',
+      text: 'Kibler Park, Johannesburg South, Gauteng. Map on the contact page.',
+      keywords: 'where address map directions johannesburg gauteng south africa' },
+    { type: 'Info', title: 'WhatsApp & phone', url: 'contact.html',
+      text: 'Message or call the studio directly to book.',
+      keywords: 'whatsapp call phone number telephone message' },
+    { type: 'Info', title: 'Instagram & TikTok', url: 'contact.html',
+      text: 'Follow @kreatedbykeora for more designs.',
+      keywords: 'instagram tiktok social media follow kreatedbykeora' },
+
+
 
 
