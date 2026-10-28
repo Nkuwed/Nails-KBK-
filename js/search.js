@@ -231,6 +231,28 @@ const TYPE_BOOST = { Page: 8, Service: 6, Info: 3 };
   document.addEventListener('keydown', (e) => {
     const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
 
+    // "/" opens search from anywhere (unless the visitor is typing in a form).
+    if (e.key === '/' && !typing && panel.hidden) {
+      e.preventDefault();
+      openPanel();
+      return;
+    }
+    if (panel.hidden) return;
+
+    if (e.key === 'Escape') {
+      closePanel();
+    } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      // Move focus through the input and the result links.
+      const items = [input, ...results.querySelectorAll('a')];
+      const i = items.indexOf(document.activeElement);
+      if (i === -1) return;
+      e.preventDefault();
+      const next = e.key === 'ArrowDown' ? Math.min(i + 1, items.length - 1) : Math.max(i - 1, 0);
+      items[next].focus();
+    }
+  });
+
+
 
 
 
