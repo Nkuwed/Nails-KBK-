@@ -1,8 +1,8 @@
-## Changelog
+K## Changelog
 
-### Part 1 — 12–14 August 2026
+### Part 1 —> 12–14 August 2026
 
-12 August 2026
+**12 August 2026**
 - First commit — initial HTML structure for the site.
 - Added `art_work.html` to the project structure.
 - Fixed two early typing errors.
@@ -17,7 +17,7 @@
 - Revised the Art Work page content and added draft images.
 - Expanded README with fuller project details and file structure.
 
-13 August 2026
+**13 August 2026**
 - Cleaned up duplicate/incorrect image entries in `art_work.html`.
 - Added studio policies content (deposits, late arrivals, cancellations) to the enquiry page.
 - Created the `documents` folder.
@@ -29,7 +29,7 @@
 - Removed a stray `KBK/document` directory.
 - Added primary navigation (`top-links`) to every page.
 
-14 August 2026
+**14 August 2026**
 - Updated the References list in README.md ahead of submission.
 
 ### Part 2 — 09 September 2026
@@ -85,26 +85,19 @@ Worked page by page to redo the code so the JavaScript is working throughout all
 
 ### Part 3 — 22 October 2026 (search, lightbox and rubric review)
 
-**Requested changes**
-
-- **Site-wide search bar (new `js/search.js`).** Added a magnifier button to the
-  header of all six pages (`index`, `about`, `services`, `enquiry`, `contact`,
-  `art_work`). It opens a search panel under the header (also opened with the
-  `/` key). Typing searches an index of every page, service (with prices),
-  policy, opening hours/location/contact detail and all 20 Art Work photos.
-Every typed word must match (AND search), results are ranked (title →
+- **Site-wide search bar (for new `js/search.js`).**
+-  Added a magnifier button to the header of all six pages. It opens a search panel under the header.
+-Typing searches an index of every page, service (with prices), policy, opening hours/location/contact detail and all 20 Art_Work photos.
+-Every typed word matches, and results are ranked (title →
   keywords → description, pages/services above photos), matches are
-  highlighted, and the panel is keyboard friendly (Enter opens the best match,
-  ↑/↓ move through results, Esc closes). Art Work results deep-link to
-  `art_work.html#art-N`, which opens that photo in the lightbox. The panel has
-  its own styles in section 16 of `style.css` and a `role="search"` form with a
-  label for screen readers.
-- **Art Work lightbox (new `js/lightbox.js`).** Every photo on `art_work.html`
-  is now a `<button>` that opens a full-screen viewer showing the large image
-  with its caption. The viewer is **scrollable**: "Full size" (or clicking the
-  photo) shows the image at its real pixel size inside a scroll area so the
-  visitor can scroll/drag around it in both directions; "Fit to screen"
-  returns to the whole photo. Also added Previous/Next buttons, ← → keys,
+  highlighted, and the panel is keyboard friendly. Art_Work results deep-link to
+  `art_work.html#art-N`, opening photos in the lightbox.
+
+- **Art Work lightbox (new `js/lightbox.js`).**
+- Every photo on `art_work.html` is now a `<button>` that opens a full-screen viewer showing the large image with its caption.
+-  The viewer is **scrollable**: "Full size" shows the image at its real pixel size inside a scroll area so the visitor can scroll/drag around it in both directions; "Fit to screen"
+  returns to the whole photo.
+-Also added Previous/Next buttons, ← → keys,
   swipe on touch screens, Esc / × / backdrop-click to close, a "n / 20"
   counter, a keyboard focus trap, focus returned to the photo on close, and the
   page behind no longer scrolls while it is open.
