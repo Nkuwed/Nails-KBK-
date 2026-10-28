@@ -2,8 +2,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 html, body, h1, h2, h3, h4, p, ul, ol, li, figure { margin: 0; padding: 0; }
 ul, ol { list-style: none; }
-img { max-width: 100%; height: auto; display: block; }
-picture { display: block; }
+img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 button { font: inherit; background: none; border: none; cursor: pointer; color: inherit; }
 input, textarea, select { font: inherit; color: inherit; }
@@ -15,7 +14,6 @@ html { -webkit-text-size-adjust: 100%; }
     transition-duration: 0.001ms !important;
   }
 }
-
 
 /* ---------- 2. DESIGN TOKENS ---------- */
 :root {
@@ -56,11 +54,11 @@ html { -webkit-text-size-adjust: 100%; }
   --radius-m: 16px;
   --radius-l: 24px;
   --header-h: 64px;
+  --tabbar-h: 68px;
 
   --shadow-card: 0 12px 28px -12px rgba(0, 0, 0, 0.45);
 }
 
-
 /* ---------- 3. BASE ---------- */
 body {
   background: var(--charcoal);
@@ -68,6 +66,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--step-0);
   line-height: 1.6;
+  padding-bottom: calc(var(--tabbar-h) + var(--space-2));
 }
 
 h1, h2, h3, h4 {
@@ -81,8 +80,6 @@ h1 { font-size: var(--step-3); margin-bottom: var(--space-2); }
 h2 { font-size: var(--step-2); }
 h3 { font-size: var(--step-1); margin-bottom: var(--space-1); }
 h4 { font-size: var(--step-0); color: var(--rose-gold); }
-.pillar h3, .policy-item h3 { font-size: var(--step-0); color: var(--rose-gold); margin-bottom: 4px; }
-.story-block h2 { font-size: var(--step-1); margin-bottom: var(--space-1); }
 
 p { max-width: 62ch; color: #e7dde3; }
 
@@ -129,74 +126,76 @@ main > .wrap > * + section {
   border-bottom: 1px solid var(--charcoal-line);
 }
 
-/* ---------- 3. BASE ---------- */
-body {
-  background: var(--charcoal);
-  color: var(--cream);
-  font-family: var(--font-body);
-  font-size: var(--step-0);
-  line-height: 1.6;
+.site-header .wrap {
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
 }
 
-h1, h2, h3, h4 {
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
   font-family: var(--font-display);
-  color: var(--blush-soft);
-  line-height: 1.15;
   font-weight: 600;
+  color: var(--blush-soft);
+  font-size: var(--step-0);
 }
 
-h1 { font-size: var(--step-3); margin-bottom: var(--space-2); }
-h2 { font-size: var(--step-2); }
-h3 { font-size: var(--step-1); margin-bottom: var(--space-1); }
-h4 { font-size: var(--step-0); color: var(--rose-gold); }
-.pillar h3, .policy-item h3 { font-size: var(--step-0); color: var(--rose-gold); margin-bottom: 4px; }
-.story-block h2 { font-size: var(--step-1); margin-bottom: var(--space-1); }
-
-p { max-width: 62ch; color: #e7dde3; }
-
-.wrap {
-  width: 100%;
-  max-width: var(--wrap-max);
-  margin-inline: auto;
-  padding-inline: var(--space-3);
+.site-header .brand img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-main {
-  display: block;
-  padding-top: var(--space-4);
+.site-header .brand h1 { font-size: var(--step-0); margin: 0; }
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--blush-soft);
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+.back-link:hover,
+.back-link:focus-visible { color: var(--rose-gold); }
+
+/* Top nav hidden on mobile, shown at desktop breakpoint */
+.top-links {
+  display: none;
 }
 
-main > .wrap > section,
-main > .wrap > * + section {
-  margin-bottom: var(--space-5);
+.top-links a {
+  padding: var(--space-1) var(--space-2);
+  color: #d8cdd3;
+  font-weight: 500;
+  border-radius: var(--radius-s);
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 
-.eyebrow {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: var(--step--1);
-  color: var(--rose-gold);
-  margin-bottom: var(--space-1);
+.top-links a:hover,
+.top-links a:focus-visible {
+  color: var(--blush-soft);
+  background: var(--charcoal-raised);
 }
 
-.swipe {
-  width: 56px;
-  height: 3px;
-  background: var(--rose-gold);
-  border-radius: 999px;
-  margin: var(--space-2) 0 var(--space-3);
+.top-links a.active {
+  color: var(--charcoal);
+  background: var(--blush);
 }
 
-/* ---------- 4. HEADER / NAV ---------- */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  background: rgba(24, 19, 26, 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--charcoal-line);
+.menu-toggle {
+  display: inline-flex;
+  padding: var(--space-1);
+  border-radius: var(--radius-s);
+  color: var(--blush-soft);
 }
-
+.menu-toggle:hover,
+.menu-toggle:focus-visible { background: var(--charcoal-raised); }
 
 /* ---------- 5. MOBILE DRAWER ---------- */
 .drawer {
@@ -368,10 +367,7 @@ main > .wrap > * + section {
   aspect-ratio: 1 / 1;
 }
 .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
-/* <picture> wrappers must fill the thumbnail box so object-fit: cover can centre-crop the photo */
-.thumb picture, .thumb-open picture { width: 100%; height: 100%; }
 .thumb:hover img { transform: scale(1.05); }
-
 
 .thumb-label {
   position: absolute;
@@ -441,7 +437,6 @@ main > .wrap > * + section {
   margin-bottom: var(--space-3);
   font-size: var(--step--1);
 }
-
 /* ---------- 10. FORMS ---------- */
 form { display: flex; flex-direction: column; gap: var(--space-3); }
 
@@ -477,7 +472,6 @@ form { display: flex; flex-direction: column; gap: var(--space-3); }
 .field textarea::placeholder { color: #8a7d84; }
 
 .file-input { padding: 0.6rem 1rem; }
-
 
 .error-msg {
   display: none;
@@ -563,6 +557,50 @@ form { display: flex; flex-direction: column; gap: var(--space-3); }
 .footer-links { display: flex; flex-wrap: wrap; gap: var(--space-3); font-size: var(--step--1); }
 .footer-links a:hover, .footer-links a:focus-visible { color: var(--blush-soft); }
 
+/* ---------- 13. STICKY BOTTOM TAB BAR (mobile) ---------- */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: var(--tabbar-h);
+  background: rgba(24, 19, 26, 0.95);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var (--charcoal-line);
+}
+
+.tab-bar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.7rem;
+  color: #a99aa3;
+  padding: 4px 8px;
+  border-radius: var(--radius-s);
+}
+.tab-bar a:hover,
+.tab-bar a:focus-visible,
+.tab-bar a.active { color: var(--blush-soft); }
+
+.tab-bar .cta-tab { padding: 0; }
+.tab-pill {
+  background: var(--blush);
+  color: var(--charcoal);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 10px 18px;
+  border-radius: 999px;
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-card);
+}
+.tab-bar .cta-tab:hover .tab-pill,
+.tab-bar .cta-tab:focus-visible .tab-pill { background: var(--rose-gold); }
+
 /* ---------- 14. RESPONSIVE: TABLET (≥600px) ---------- */
 @media (min-width: 600px) {
   :root {
@@ -582,8 +620,10 @@ form { display: flex; flex-direction: column; gap: var(--space-3); }
     --step-4: 3.4rem;
   }
 
+  body { padding-bottom: 0; }
+
   .top-links { display: flex; align-items: center; gap: 2px; }
-  .menu-toggle { display: none; }
+  .menu-toggle, .tab-bar { display: none; }
 
   .hero {
     flex-direction: row-reverse;
@@ -601,6 +641,7 @@ form { display: flex; flex-direction: column; gap: var(--space-3); }
 
   .contact-list li { font-size: var(--step-0); }
 }
+
 
 /* ==========================================================================
    16. ADDITIONS (Part 3) — site search, gallery lightbox, accordion
@@ -629,6 +670,7 @@ form { display: flex; flex-direction: column; gap: var(--space-3); }
 .search-toggle:hover,
 .search-toggle:focus-visible,
 .search-toggle[aria-expanded="true"] { background: var(--charcoal-raised); color: var(--blush); }
+
 /* ---------- 16.2 Search panel (drops down under the sticky header) ---------- */
 .search-panel {
   position: fixed;
@@ -711,6 +753,7 @@ form { display: flex; flex-direction: column; gap: var(--space-3); }
 .search-title { font-family: var(--font-display); font-size: var(--step-1); color: var(--blush-soft); }
 .search-text  { font-size: var(--step--1); color: #d8cdd3; }
 .search-result mark { background: rgba(241, 196, 214, 0.28); color: var(--blush); border-radius: 3px; padding: 0 2px; }
+
 /* ---------- 16.3 Gallery: photos are buttons that open the lightbox ---------- */
 .thumb-open {
   display: block;
@@ -833,6 +876,7 @@ body.lightbox-open { overflow: hidden; }   /* page behind does not scroll */
 .lightbox-nav:focus-visible { background: var(--charcoal-line); border-color: var(--rose-gold); outline: none; }
 .lightbox-prev { left: var(--space-1); }
 .lightbox-next { right: var(--space-1); }
+
 /* ---------- 16.5 Accordion (enquiry page policies) ---------- */
 .accordion { display: grid; gap: var(--space-1); }
 .accordion details {
@@ -905,30 +949,3 @@ body.lightbox-open { overflow: hidden; }   /* page behind does not scroll */
 .poster-grid { display: grid; gap: var(--space-2); margin-top: var(--space-3); grid-template-columns: 1fr; }
 .poster-grid img { width: 100%; height: auto; border-radius: var(--radius-m); }
 @media (min-width: 600px) { .poster-grid { grid-template-columns: repeat(3, 1fr); } }
-
-/* ---------- 16.8 Contact page: interactive Leaflet map ---------- */
-.map-note { color: #a99aa3; font-size: var(--step--1); margin: 4px 0 var(--space-2); }
-.map-controls { margin-bottom: var(--space-2); }
-.map-controls .chip { cursor: pointer; }
-.map-frame { background: var(--charcoal-raised); aspect-ratio: 4 / 3; }   /* taller on phones so the map is usable */
-@media (min-width: 600px) { .map-frame { aspect-ratio: 16 / 10; } }
-.map-frame .leaflet-container { width: 100%; height: 100%; font-family: var(--font-body); }
-.map-popup strong { display: block; color: var(--charcoal); font-family: var(--font-display); font-size: var(--step-0); margin-bottom: 2px; }
-.map-popup p { color: #3b3340; font-size: var(--step--1); line-height: 1.4; margin: 0 0 6px; }
-.map-popup a { color: #8a4f6a; font-weight: 700; text-decoration: underline; }
-@media (min-width: 860px) { .map-frame { aspect-ratio: 21 / 9; } }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
