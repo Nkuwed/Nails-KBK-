@@ -14,8 +14,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<!-- Leaflet (interactive map). Integrity hashes pin the exact file so a tampered copy is refused. -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
 <body>
 
@@ -31,8 +29,8 @@
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
       <a href="enquiry.html">Enquiry</a>
-      <a href="contact.html" class="active" aria-current="page">Contact</a>
-      <a href="art_work.html">Art Work</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="art_work.html"> Art Work</a>
     </nav>
 
     <div class="header-actions">
@@ -60,7 +58,6 @@
 </div>
 
 
-
   <div class="drawer" data-drawer>
   <div class="drawer-panel">
     <button class="drawer-close" aria-label="Close menu" data-menu-close>&times;</button>
@@ -70,7 +67,7 @@
       <a href="services.html">Services</a>
       <a href="enquiry.html">Book / Enquire</a>
       <a href="contact.html">Contact</a>
-     <a href="art_work.html">Art Work</a>
+     <a href="art_work.html"> Art Work</a>
 
     </nav>
   </div>
@@ -85,9 +82,48 @@
       <div class="swipe"></div>
     </section>
 
+<section>
+      <div class="map-frame">
+        <iframe
+          title="KreatedByKeora studio location — Kibler Park, Johannesburg"
+          src="https://www.google.com/maps?q=Kibler+Park,+Johannesburg,+South+Africa&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+   <section >
+      <ul class="contact-list">
+        <li>
+          <svg width="20px" height="25px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Kibler Park, Johannesburg South, Gauteng
+        </li>
+        <li>
+          <svg width="22px" height="25px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          Mon – Sat: 09:00 – 17:00
+        </li>
+        <li>
+          <svg width="25px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>
+          Bookings via the enquiry form or WhatsApp
+        </li>
+      </ul>
+
+           <div class="social-row">
+        <a class="social-btn whatsapp" href="https://wa.me/27820951275" target="_blank" rel="noopener">
+          WhatsApp</a>
+          
+        <a class="social-btn" href="tel:+27820951275">Call the studio</a>
+      </div>
+      <div class="social-row">
+        <a class="social-btn" href="https://instagram.com/kreatedbykeora" target="_blank" rel="noopener">Instagram</a>
+        <a class="social-btn" href="https://tiktok.com/@kreatedbykeora" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </section>
+
     <!-- Small contact form per wireframe (Name / Email / Message + Send) -->
     <section>
-      <h2>Send a message</h2>
+      <h3>Send a message</h3>
       <!-- Validated in js/main.js. On a valid submit the details are compiled into an
            email (mailto:) addressed to the studio so the visitor can send it. -->
       <form id="contact-form" novalidate data-form="contact" action="#" method="post">
@@ -133,58 +169,13 @@
       </form>
     </section>
 
-    <!-- ============ MAP ============ -->
-    <section aria-labelledby="map-title">
-      <h2 id="map-title">Find the studio</h2>
-      <p class="map-note">Tap a pin for directions, or use the buttons to jump between places.</p>
-      <div class="chip-row map-controls" role="group" aria-label="Map locations">
-        <button type="button" class="chip active" data-map-focus="all">Show both</button>
-        <button type="button" class="chip" data-map-focus="studio">Studio · Kibler Park</button>
-        <button type="button" class="chip" data-map-focus="landmark">Landmark · Southgate</button>
-      </div>
-      <!-- js/map.js draws the Leaflet map into #map. The iframe below is only used when JavaScript is off. -->
-      <div class="map-frame" id="map" role="region" aria-label="Map showing the studio area in Kibler Park and the nearby Southgate Shopping Centre">
-        <noscript>
-          <iframe title="KreatedByKeora studio location — Kibler Park, Johannesburg" src="https://www.google.com/maps?q=Kibler+Park,+Johannesburg,+South+Africa&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </noscript>
-      </div>
-    </section>
- <section>
-      <ul class="contact-list">
-        <li>
-          <svg width="20px" height="25px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Kibler Park, Johannesburg South, Gauteng
-        </li>
-        <li>
-          <svg width="22px" height="25px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          Mon – Sat: 09:00 – 17:00
-        </li>
-        <li>
-          <svg width="25px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>
-          Bookings via the enquiry form or WhatsApp
-        </li>
-      </ul>
-
-   
-           <div class="social-row">
-        <a class="social-btn whatsapp" href="https://wa.me/27820951275" target="_blank" rel="noopener">
-          WhatsApp</a>
-          
-        <a class="social-btn" href="tel:+27820951275">Call the studio</a>
-      </div>
-      <div class="social-row">
-        <a class="social-btn" href="https://instagram.com/kreatedbykeora" target="_blank" rel="noopener">Instagram</a>
-        <a class="social-btn" href="https://tiktok.com/@kreatedbykeora" target="_blank" rel="noopener">TikTok</a>
-      </div>
-    </section>
-
-  </div><!-- /.wrap -->
+  </div>
 </main>
 
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
   <div class="wrap">
-    <div class="brand"><img src="images/hero/logo-96.jpg" width="32" height="32" alt="" loading="lazy"> KreatedByKeora</div>
+    <div class="brand"><img src="images/hero/logo.jpeg" alt=""> KreatedByKeora</div>
     <p>Nail artistry studio based in Kibler Park, Johannesburg South. Bookings via website form or WhatsApp.</p>
     <div class="social-row">
       <a class="social-btn whatsapp" href="https://wa.me/27820951275" target="_blank" rel="noopener">WhatsApp</a>
@@ -201,16 +192,8 @@
   </div>
 </footer>
 
-  
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
 <script src="js/main.js" defer></script>
 <script src="js/search.js" defer></script>
-<script src="js/map.js" defer></script>
 </body>
 </html>
-
-
-
-
-    
-  
