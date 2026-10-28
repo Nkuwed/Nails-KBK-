@@ -145,6 +145,25 @@
     });
     return safe;
   }
+const TYPE_BOOST = { Page: 8, Service: 6, Info: 3 };
+
+  // Score one entry for the typed words; 0 means "does not match".
+  function score(entry, words) {
+    const title = normalise(entry.title);
+    const text  = normalise(entry.text);
+    const keys  = normalise(entry.keywords || '');
+    // Pages and services rank above photos when the match is otherwise equal.
+    let total = TYPE_BOOST[entry.type] || 0;
+    for (const w of words) {
+      let s = 0;
+      if (title.includes(w)) s += 10;
+      if (keys.includes(w))  s += 5;
+      if (text.includes(w))  s += 3;
+      if (s === 0) return 0;                    // every word must match somewhere
+      total += s;
+    }
+    return total;
+  }
 
 
 
