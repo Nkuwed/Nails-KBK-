@@ -268,6 +268,25 @@ document.addEventListener('DOMContentLoaded', () => {
       '</ul>';
   }
 
+  // --- Contact: compile an email for the visitor to send ------------------
+  function showContactEmail(box, d) {
+    const subject = '[Website] ' + d.type + ' — ' + d.name;
+    const body =
+      'Name: ' + d.name + '\n' +
+      'Email: ' + d.email + '\n' +
+      'Phone: ' + d.phone + '\n' +
+      'Type of message: ' + d.type + '\n\n' +
+      d.message;
+    const href = 'mailto:' + CONTACT_EMAIL +
+      '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+    box.innerHTML =
+      '<strong>Thanks, ' + escapeHtml(d.name.split(' ')[0]) + '! Your message is ready to send.</strong>' +
+      '<p>We have put your details into an email addressed to <em>' + CONTACT_EMAIL + '</em>. ' +
+      'Press the button to open it in your email app and hit send.</p>' +
+      '<a class="btn btn-primary" href="' + href + '">Open email to send</a>';
+  }
+
 
 
 
