@@ -29,3 +29,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
+  /* ---- Services filter (services.html) ---- */
+  const filterRow = document.querySelector('[data-filter-row]');
+  const serviceGrid = document.querySelector('[data-service-grid]');
+  const emptyState = document.getElementById('empty-state');
+
+  if (filterRow && serviceGrid) {
+    const cards = serviceGrid.querySelectorAll('.service-card');
+
+    filterRow.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-filter]');
+      if (!btn) return;
+
+      filterRow.querySelectorAll('.chip').forEach((chip) => chip.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const match = filter === 'all' || card.getAttribute('data-category') === filter;
+        card.toggleAttribute('data-hidden-by-chip', !match);
+        card.style.display = (match && !card.hasAttribute('data-hidden-by-text')) ? '' : 'none';
+        if (card.style.display !== 'none') visibleCount += 1;
+      });
+
+      if (emptyState) {
+        emptyState.classList.toggle('is-visible', visibleCount === 0);
+      }
+    });
+  }
+
