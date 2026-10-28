@@ -287,6 +287,16 @@ document.addEventListener('DOMContentLoaded', () => {
       '<a class="btn btn-primary" href="' + href + '">Open email to send</a>';
   }
 
+  // Escape user text before it goes into innerHTML.
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, (c) =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+});
+
+
+
 
 
 
