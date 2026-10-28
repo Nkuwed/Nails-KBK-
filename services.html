@@ -15,8 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-
-  <body>
+<body>
 
 <header class="site-header">
   <div class="wrap">
@@ -24,16 +23,16 @@
       <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
       Back
     </a>
-<nav class="top-links" aria-label="Primary">
+    
+    <nav class="top-links" aria-label="Primary">
       <a href="index.html">Home</a>
-      <a href="services.html" class="active" aria-current="page">Services</a>
+      <a href="services.html" class="active">Services</a>
       <a href="about.html">About</a>
       <a href="enquiry.html">Enquiry</a>
       <a href="contact.html">Contact</a>
-      <a href="art_work.html">Art Work</a>
+      <a href="art_work.html"> Art Work</a>
     </nav>
-    
-<div class="header-actions">
+    <div class="header-actions">
       <button class="search-toggle" type="button" aria-label="Search the website" aria-expanded="false" aria-controls="search-panel" data-search-open>
         <svg width="26px" height="26px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
       </button>
@@ -57,6 +56,7 @@
   </div>
 </div>
 
+
   
 <div class="drawer" data-drawer>
   <div class="drawer-panel">
@@ -67,7 +67,7 @@
       <a href="services.html">Services</a>
       <a href="enquiry.html">Book / Enquire</a>
       <a href="contact.html">Contact</a>
-     <a href="art_work.html">Art Work</a>
+     <a href="art_work.html"> Art Work</a>
 
     </nav>
   </div>
@@ -84,8 +84,7 @@
     </section>
 
 
-<section aria-labelledby="service-list-title">
-      <h2 id="service-list-title" class="sr-only">Service list</h2>
+<section aria-label="Service list">
 <!-- Search + filter, per wireframe: type to narrow the list, or pick a category chip -->
     <div class="field service-search">
       <label class="sr-only" for="service-search">Search services</label>
@@ -99,14 +98,12 @@
         <button class="chip" data-filter="nail-art">Nail Art</button>
         <button class="chip" data-filter="pedicure">Pedicures</button>
       </div>
+    
 
-  <div class="grid-2" data-service-grid>
+      <div class="grid-2" data-service-grid>
 
         <article class="service-card" data-category="manicure" id="manicures">
-          <div class="thumb"><picture>
-              <source type="image/webp" srcset="images/portfolio/thumbs/classic-white-manicure-480.webp 480w, images/portfolio/thumbs/classic-white-manicure-960.webp 960w" sizes="(min-width: 860px) 350px, (min-width: 600px) 50vw, 100vw">
-              <img src="images/portfolio/thumbs/classic-white-manicure-480.jpg" srcset="images/portfolio/thumbs/classic-white-manicure-480.jpg 480w, images/portfolio/thumbs/classic-white-manicure-960.jpg 960w" sizes="(min-width: 860px) 350px, (min-width: 600px) 50vw, 100vw" width="480" height="640" alt="Classic manicure with a clean milky white finish" decoding="async">
-            </picture></div>
+          <div class="thumb"><img src="images/portfolio/classic-white-manicure.jpg" alt="Classic manicure with soft pink polish"></div>
           <div class="service-body">
             <h3>Classic Manicure</h3>
             <span class="price">From R150</span>
@@ -114,11 +111,9 @@
           </div>
         </article>
 
+
  <article class="service-card" data-category="gel-x" id="gel-x">
-          <div class="thumb"><picture>
-              <source type="image/webp" srcset="images/portfolio/thumbs/pink-french-gold-charms-stilettos-480.webp 480w, images/portfolio/thumbs/pink-french-gold-charms-stilettos-960.webp 960w" sizes="(min-width: 860px) 350px, (min-width: 600px) 50vw, 100vw">
-              <img src="images/portfolio/thumbs/pink-french-gold-charms-stilettos-480.jpg" srcset="images/portfolio/thumbs/pink-french-gold-charms-stilettos-480.jpg 480w, images/portfolio/thumbs/pink-french-gold-charms-stilettos-960.jpg 960w" sizes="(min-width: 860px) 350px, (min-width: 600px) 50vw, 100vw" width="480" height="491" alt="Gel-X extensions with gold charm accents" decoding="async">
-            </picture></div>
+          <div class="thumb"><img src="images/portfolio/pink-french-charms.jpeg" alt="Gel-X extensions with charm accents"></div>
           <div class="service-body">
             <h3>Gel-X Extensions</h3>
             <span class="price">From R350</span>
@@ -126,11 +121,8 @@
           </div>
         </article>
 
-   <article class="service-card" data-category="nail-art" id="nail-art">
-          <div class="thumb"><picture>
-              <source type="image/webp" srcset="images/portfolio/thumbs/gold-jewel-nails-480.webp 480w, images/portfolio/thumbs/gold-jewel-nails-960.webp 960w" sizes="(min-width: 860px) 350px, (min-width: 600px) 50vw, 100vw">
-              <img src="images/portfolio/thumbs/gold-jewel-nails-480.jpg" srcset="images/portfolio/thumbs/gold-jewel-nails-480.jpg 480w, images/portfolio/thumbs/gold-jewel-nails-960.jpg 960w" sizes="(min-width: 860px) 350px, (min-width: 600px) 50vw, 100vw" width="480" height="640" alt="Custom gold jewelled nail art" decoding="async">
-            </picture></div>
+        <article class="service-card" data-category="nail-art" id="nail-art">
+          <div class="thumb"><img src="images/portfolio/gold-jewel-nails.jpeg" alt="Custom gold jewelled nail art"></div>
           <div class="service-body">
             <h3>Custom Nail Art</h3>
             <span class="price">From R450</span>
@@ -138,11 +130,8 @@
           </div>
         </article>
 
- <article class="service-card" data-category="gel-x" id="gel-overlay">
-          <div class="thumb"><picture>
-              <source type="image/webp" srcset="images/portfolio/thumbs/soft-pink-silver-line-nails-480.webp 480w, images/portfolio/thumbs/soft-pink-silver-line-nails-960.webp 960w" sizes="(min-width: 860px) 350px, (min-width: 600px) 50vw, 100vw">
-              <img src="images/portfolio/thumbs/soft-pink-silver-line-nails-480.jpg" srcset="images/portfolio/thumbs/soft-pink-silver-line-nails-480.jpg 480w, images/portfolio/thumbs/soft-pink-silver-line-nails-960.jpg 960w" sizes="(min-width: 860px) 350px, (min-width: 600px) 50vw, 100vw" width="480" height="638" alt="Sheer pink gel overlay with fine silver line art" loading="lazy" decoding="async">
-            </picture></div>
+        <article class="service-card" data-category="gel-x" id="gel-overlay">
+          <div class="thumb"><img src="images/portfolio/soft-pink-silver-line-nails.jpg" alt="Sheer pink gel overlay with fine silver line art" loading="lazy"></div>
           <div class="service-body">
             <h3>Gel Overlay</h3>
             <span class="price">From R250</span>
@@ -150,11 +139,8 @@
           </div>
         </article>
 
-    <article class="service-card" data-category="pedicure" id="pedicures">
-          <div class="thumb"><picture>
-              <source type="image/webp" srcset="images/portfolio/french-pedicure-close-up.webp">
-              <img src="images/portfolio/french-pedicure-close-up.jpg" width="462" height="410" alt="French pedicure with crisp white tips" loading="lazy" decoding="async">
-            </picture></div>
+        <article class="service-card" data-category="pedicure" id="pedicures">
+          <div class="thumb"><img src="images/portfolio/french-pedicure-close-up.png" alt="French pedicure with crisp white tips" loading="lazy"></div>
           <div class="service-body">
             <h3>Pedicure</h3>
             <span class="price">From R200</span>
@@ -162,11 +148,8 @@
           </div>
         </article>
 
-     <article class="service-card" data-category="nail-art">
-          <div class="thumb"><picture>
-              <source type="image/webp" srcset="images/portfolio/thumbs/olive-gold-chrome-almond-nails-480.webp 480w, images/portfolio/thumbs/olive-gold-chrome-almond-nails-960.webp 960w" sizes="(min-width: 860px) 350px, (min-width: 600px) 50vw, 100vw">
-              <img src="images/portfolio/thumbs/olive-gold-chrome-almond-nails-480.jpg" srcset="images/portfolio/thumbs/olive-gold-chrome-almond-nails-480.jpg 480w, images/portfolio/thumbs/olive-gold-chrome-almond-nails-960.jpg 960w" sizes="(min-width: 860px) 350px, (min-width: 600px) 50vw, 100vw" width="480" height="519" alt="Olive and gold chrome accent nails" loading="lazy" decoding="async">
-            </picture></div>
+        <article class="service-card" data-category="nail-art">
+          <div class="thumb"><img src="images/portfolio/olive-gold-chrome-almond-nails.jpg" alt="Olive and gold chrome accent nails" loading="lazy"></div>
           <div class="service-body">
             <h3>Add-on Design</h3>
             <span class="price">From R50</span>
@@ -183,33 +166,23 @@
       <a href="enquiry.html" class="btn btn-primary btn-block">Book / Enquire About a Service</a>
     </section>
 
-
-  <section aria-labelledby="posters-title">
+    <section aria-labelledby="posters-title">
       <h2 id="posters-title">Price list &amp; policies</h2>
       <p>The studio's current price list and booking policies, exactly as shared on social media.</p>
       <div class="poster-grid">
-        <picture>
-        <source type="image/webp" srcset="images/posters/studio-price-list.webp">
-        <img src="images/posters/studio-price-list.jpg" width="900" height="1199" alt="KreatedByKeora price list: Gel-X full cover tips, rubber base gel, toes, soak off and extras" loading="lazy" decoding="async">
-      </picture>
-        <picture>
-        <source type="image/webp" srcset="images/posters/studio-policy-1.webp">
-        <img src="images/posters/studio-policy-1.jpg" width="900" height="1200" alt="KreatedByKeora policy poster: 50% deposit, non-refundable deposit, grace periods and late fee" loading="lazy" decoding="async">
-      </picture>
-        <picture>
-        <source type="image/webp" srcset="images/posters/studio-policy-2.webp">
-        <img src="images/posters/studio-policy-2.jpg" width="900" height="1200" alt="KreatedByKeora policy poster: refills, nail repairs, no kids and parental consent" loading="lazy" decoding="async">
-      </picture>
+        <img src="images/portfolio/studio-price-list.jpg" width="1170" height="1560" alt="KreatedByKeora price list: Gel-X full cover tips, rubber base gel, toes, soak off and extras" loading="lazy">
+        <img src="images/portfolio/studio-policy-1.jpg" width="1170" height="1560" alt="KreatedByKeora policy poster: 50% deposit, non-refundable deposit, grace periods and late fee" loading="lazy">
+        <img src="images/portfolio/studio-policy-2.jpg" width="1170" height="1560" alt="KreatedByKeora policy poster: refills, nail repairs, no kids and parental consent" loading="lazy">
       </div>
     </section>
 
   </div>
 </main>
-    
+
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
   <div class="wrap">
-    <div class="brand"><img src="images/hero/logo-96.jpg" width="32" height="32" alt="" loading="lazy"> KreatedByKeora</div>
+    <div class="brand"><img src="images/hero/logo.jpeg" alt=""> KreatedByKeora</div>
     <p>Nail artistry studio based in Kibler Park, Johannesburg South. Bookings via website form or WhatsApp.</p>
     <div class="social-row">
       <a class="social-btn whatsapp" href="https://wa.me/27820951275" target="_blank" rel="noopener">WhatsApp</a>
@@ -230,5 +203,3 @@
 </body>
 </html>
 
-
-    
