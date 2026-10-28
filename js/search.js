@@ -251,6 +251,14 @@ const TYPE_BOOST = { Page: 8, Service: 6, Info: 3 };
       items[next].focus();
     }
   });
+  // Clicking a result on the same page (e.g. a #hash link) should close the panel.
+  results.addEventListener('click', (e) => {
+    if (e.target.closest('a')) {
+      panel.hidden = true;
+      openBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
 
 
 
