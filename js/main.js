@@ -200,5 +200,44 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       success?.classList.remove('is-visible');
 
+      // 1. validate everything; focus the first problem
+      let firstBad = null;
+      form.querySelectorAll('[data-field]').forEach((field) => {
+        if (!validateField(field) && !firstBad) firstBad = field.querySelector('input, select, textarea');
+      });
+      if (firstBad) { firstBad.focus(); return; }
+
+      // 2. collect the answers
+      const data = Object.fromEntries(new FormData(form).entries());
+      delete data.reference;                         // file input is not sent as JSON
+
+      // 3. "send" via AJAX
+      const originalLabel = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      try {
+        await sendAjax(form, data);
+
+        if (kind === 'enquiry') {
+          showEnquiryResponse(success, data);
+        } else {
+          showContactEmail(success, data);
+        }
+        success.classList.add('is-visible');
+        success.focus();
+        form.reset();
+        form.querySelectorAll('.is-invalid').forEach((f) => f.classList.remove('is-invalid'));
+        form.querySelectorAll('[aria-invalid]').forEach((i) => i.removeAttribute('aria-invalid'));
+      } catch (err) {
+        success.innerHTML = '<strong>Sorry — that didn’t send.</strong> Please try again, or WhatsApp Keora directly.';
+        success.classList.add('is-visible');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      }
+    });
+  });
+
+
 
 
