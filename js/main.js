@@ -175,4 +175,30 @@ document.addEventListener('DOMContentLoaded', () => {
     return { ok: true };
   }
 
+  const rand = (n) => 'R' + n.toLocaleString('en-ZA');
+
+  document.querySelectorAll('form[novalidate]').forEach((form) => {
+    const kind = form.dataset.form;                 // "enquiry" | "contact"
+    const success = form.querySelector('.form-success');
+    const submitBtn = form.querySelector('[type="submit"]');
+
+    // Stop picking past dates / Sundays in the calendar where the browser allows it.
+    const dateInput = form.querySelector('input[type="date"]');
+    if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
+    // Re-check a field when the visitor leaves it, and live once it has an error.
+    form.querySelectorAll('[data-field]').forEach((field) => {
+      const input = field.querySelector('input, select, textarea');
+      if (!input) return;
+      input.addEventListener('blur', () => { if (input.value.trim() !== '') validateField(field); });
+      const live = () => { if (field.classList.contains('is-invalid')) validateField(field); };
+      input.addEventListener('input', live);
+      input.addEventListener('change', live);
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      success?.classList.remove('is-visible');
+
+
 
