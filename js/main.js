@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
   /* ---- Services filter (services.html) ---- */
   const filterRow = document.querySelector('[data-filter-row]');
   const serviceGrid = document.querySelector('[data-service-grid]');
@@ -146,5 +145,16 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (value !== '' && input.dataset.rule && RULES[input.dataset.rule]) {
       message = RULES[input.dataset.rule](value);
     }
+
+    // Show / hide the error and tell assistive tech about it.
+    field.classList.toggle('is-invalid', message !== '');
+    input.setAttribute('aria-invalid', message !== '' ? 'true' : 'false');
+    if (errorEl) {
+      if (message) errorEl.textContent = message;
+      if (!errorEl.id) errorEl.id = 'err-' + (input.id || input.name);
+      input.setAttribute('aria-describedby', errorEl.id);
+    }
+    return message === '';
+  }
 
 
