@@ -201,6 +201,27 @@ const TYPE_BOOST = { Page: 8, Service: 6, Info: 3 };
     });
   }
 
+  
+  /* ---- 5. Open / close the panel -------------------------------------- */
+  function openPanel() {
+    panel.hidden = false;
+    openBtn.setAttribute('aria-expanded', 'true');
+    input.focus();
+    input.select();
+    runSearch();
+  }
+
+  function closePanel() {
+    panel.hidden = true;
+    openBtn.setAttribute('aria-expanded', 'false');
+    openBtn.focus();
+  }
+
+  openBtn.addEventListener('click', () => (panel.hidden ? openPanel() : closePanel()));
+  closeBtn.addEventListener('click', closePanel);
+  input.addEventListener('input', runSearch);
+
+
 
 
 
