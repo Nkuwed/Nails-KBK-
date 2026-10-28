@@ -112,3 +112,22 @@ document.addEventListener('DOMContentLoaded', () => {
     'not-sure':         { name: 'a service to be confirmed', from: null }
   };
 
+  // Validation rules: each returns '' when valid, or the error text to show.
+  const RULES = {
+    name: (v) => (v.length < 2 ? 'Please enter your name (at least 2 characters).'
+                  : !/^[A-Za-zÀ-ÿ' .-]+$/.test(v) ? 'Names can only contain letters, spaces, apostrophes and hyphens.' : ''),
+    email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : 'Please enter a valid email address, e.g. you@email.com.'),
+    // South African numbers: 0XX XXX XXXX, or +27 XX XXX XXXX / 27XXXXXXXXX
+    'sa-phone': (v) => (/^(?:\+?27|0)[1-9]\d{8}$/.test(v.replace(/[\s()-]/g, '')) ? ''
+                  : 'Please enter a valid South African number, e.g. 082 123 4567 or +27 82 123 4567.'),
+    message: (v) => (v.length < 10 ? 'Please write at least 10 characters so Keora knows what you need.' : ''),
+    'booking-date': (v) => {
+      if (!v) return 'Please choose a preferred date.';
+      const picked = new Date(v + 'T00:00:00');
+      const today = new Date(); today.setHours(0, 0, 0, 0);
+      if (picked < today) return 'That date has already passed — please choose a future date.';
+      if (picked.getDay() === 0) return 'The studio is closed on Sundays — please choose Monday to Saturday.';
+      return '';
+    }
+  };
+
