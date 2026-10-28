@@ -99,3 +99,32 @@
     history.replaceState(null, '', window.location.pathname + window.location.search);
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
+
+  const step = (d) => { show(current + d); history.replaceState(null, '', '#art-' + (current + 1)); };
+
+  /* ---- 5. Wire up the controls --------------------------------------- */
+  items.forEach((btn, i) => btn.addEventListener('click', () => open(i)));
+
+  box.querySelector('[data-lb-close]').addEventListener('click', close);
+  box.querySelector('[data-lb-prev]').addEventListener('click', () => step(-1));
+  box.querySelector('[data-lb-next]').addEventListener('click', () => step(1));
+  zoomBtn.addEventListener('click', () => setZoom(!box.classList.contains('is-zoomed')));
+  img.addEventListener('click', () => setZoom(!box.classList.contains('is-zoomed')));
+
+  // Click on the dark backdrop (not the photo) closes the viewer.
+  stage.addEventListener('click', (e) => { if (e.target === stage) close(); });
+
+  document.addEventListener('keydown', (e) => {
+    if (box.hidden) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft')  { e.preventDefault(); step(-1); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+    else if (e.key === 'Tab') {
+      // Focus trap: Tab cycles through the overlay's own controls only.
+      const focusables = box.querySelectorAll('button, [tabindex="0"]');
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
