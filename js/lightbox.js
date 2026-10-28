@@ -53,3 +53,49 @@
   let current = 0;          // index of the photo being shown
   let lastFocus = null;     // element to give focus back to on close
 
+  /* ---- 2. Show photo number i ---------------------------------------- */
+  function show(i) {
+    current = (i + items.length) % items.length;   // wrap around both ends
+    const btn = items[current];
+    const thumb = btn.querySelector('img');
+
+    setZoom(false);                                 // every photo opens "fit"
+    stage.scrollTo(0, 0);
+    img.src = btn.dataset.full || thumb.src;
+    img.alt = thumb.alt;
+    caption.textContent = btn.dataset.caption || thumb.alt;
+    count.textContent = (current + 1) + ' / ' + items.length;
+  }
+
+  /* ---- 3. Zoom: fit-to-screen <-> full size (scrollable) -------------- */
+  function setZoom(on) {
+    box.classList.toggle('is-zoomed', on);
+    zoomBtn.setAttribute('aria-pressed', String(on));
+    zoomBtn.textContent = on ? 'Fit to screen' : 'Full size';
+    if (on) {
+      // Start in the middle of the big image rather than the top-left corner.
+      requestAnimationFrame(() => {
+        stage.scrollLeft = (stage.scrollWidth - stage.clientWidth) / 2;
+        stage.scrollTop  = (stage.scrollHeight - stage.clientHeight) / 2;
+      });
+    }
+  }
+
+  /* ---- 4. Open / close ------------------------------------------------ */
+  function open(i) {
+    lastFocus = document.activeElement;
+    show(i);
+    box.hidden = false;
+    document.body.classList.add('lightbox-open');   // stops the page scrolling behind
+    box.querySelector('[data-lb-close]').focus();
+    // keep the address bar in step so a photo can be shared/bookmarked
+    history.replaceState(null, '', '#art-' + (current + 1));
+  }
+
+  function close() {
+    box.hidden = true;
+    document.body.classList.remove('lightbox-open');
+    img.removeAttribute('src');
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
