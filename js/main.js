@@ -61,3 +61,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
+  /* ====================================================================
+     SERVICES: live text search (combines with the category chips above)
+     ==================================================================== */
+  const serviceSearch = document.querySelector('[data-service-search]');
+  if (serviceSearch && serviceGrid) {
+    const cards = serviceGrid.querySelectorAll('.service-card');
+    const applyServiceSearch = () => {
+      const q = serviceSearch.value.trim().toLowerCase();
+      let shown = 0;
+      cards.forEach((card) => {
+        // chip filter hides cards with data-hidden-by-chip; text search hides with data-hidden-by-text
+        const match = q === '' || card.textContent.toLowerCase().includes(q);
+        card.toggleAttribute('data-hidden-by-text', !match);
+        card.style.display = (match && !card.hasAttribute('data-hidden-by-chip')) ? '' : 'none';
+        if (card.style.display !== 'none') shown += 1;
+      });
+      if (emptyState) emptyState.classList.toggle('is-visible', shown === 0);
+    };
+    serviceSearch.addEventListener('input', applyServiceSearch);
+    // let the chip filter know about the text filter
+    filterRow?.addEventListener('click', () => setTimeout(applyServiceSearch, 0));
+  }
