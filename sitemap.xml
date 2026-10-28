@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nkuwed.github.io/WEDE5020-kbk-main-PoE/index.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://nkuwed.github.io/WEDE5020-kbk-main-PoE/KBK/index.html</loc>
+    <lastmod>2026-10-22</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nkuwed.github.io/WEDE5020-kbk-main-PoE/services.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://nkuwed.github.io/WEDE5020-kbk-main-PoE/KBK/services.html</loc>
+    <lastmod>2026-10-22</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nkuwed.github.io/WEDE5020-kbk-main-PoE/art_work.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://nkuwed.github.io/WEDE5020-kbk-main-PoE/KBK/art_work.html</loc>
+    <lastmod>2026-10-22</lastmod>
     <priority>0.8</priority>
   </url>
-<url>
-    <loc>https://nkuwed.github.io/WEDE5020-kbk-main-PoE/about.html</loc>
-    <lastmod>2026-10-25</lastmod>
+  <url>
+    <loc>https://nkuwed.github.io/WEDE5020-kbk-main-PoE/KBK/enquiry.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nkuwed.github.io/WEDE5020-kbk-main-PoE/KBK/about.html</loc>
+    <lastmod>2026-10-22</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nkuwed.github.io/WEDE5020-kbk-main-PoE/enquiry.html</loc>
-    <lastmod>2026-10-25</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://nkuwed.github.io/WEDE5020-kbk-main-PoE/contact.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://nkuwed.github.io/WEDE5020-kbk-main-PoE/KBK/contact.html</loc>
+    <lastmod>2026-10-22</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>
