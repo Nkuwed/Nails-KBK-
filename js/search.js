@@ -91,6 +91,30 @@
       text: 'Follow @kreatedbykeora for more designs.',
       keywords: 'instagram tiktok social media follow kreatedbykeora' },
 
+    /* Art Work photos — the number after "art-" matches the photo's position
+       in art_work.html, which is what lightbox.js looks for in the hash.     */
+    { type: 'Art Work', title: 'Blue chrome almond nails', url: 'art_work.html#art-1', text: 'Manicure · blue chrome with silver French tips.', keywords: 'blue chrome almond manicure silver french' },
+    { type: 'Art Work', title: 'Black bow charm nails', url: 'art_work.html#art-2', text: 'Manicure · pink base with black bow charms.', keywords: 'black bow charms bohemian boh pink manicure' },
+    { type: 'Art Work', title: 'Green and gold chrome stilettos', url: 'art_work.html#art-3', text: 'Manicure · green chrome with gold detailing.', keywords: 'green gold chrome stiletto rings manicure' },
+    { type: 'Art Work', title: 'Gold jewelled stilettos', url: 'art_work.html#art-4', text: 'Manicure · gold chrome with crystals and gems.', keywords: 'gold jewel jewelled gems crystals stiletto manicure' },
+    { type: 'Art Work', title: 'Pink French with gold charms', url: 'art_work.html#art-5', text: 'Manicure · pink stilettos with gold charms.', keywords: 'pink french gold charms stiletto gel overlay manicure' },
+    { type: 'Art Work', title: 'Red grid and "I love me" nails', url: 'art_work.html#art-6', text: 'Manicure · red grid, leopard and heart-text accents.', keywords: 'red grid leopard heart love me coffin manicure' },
+    { type: 'Art Work', title: 'Gold jewel nails', url: 'art_work.html#art-7', text: 'Manicure · gold filigree with red gems.', keywords: 'gold jewel filigree red gems manicure' },
+    { type: 'Art Work', title: 'Pink French charm set', url: 'art_work.html#art-8', text: 'Manicure · soft pink French with charm accents.', keywords: 'pink french charms soft manicure' },
+    { type: 'Art Work', title: 'Soft pink with silver lines', url: 'art_work.html#art-9', text: 'Manicure · sheer pink with silver line art.', keywords: 'pink silver lines minimal chrome manicure' },
+    { type: 'Art Work', title: 'Olive chrome almond nails', url: 'art_work.html#art-10', text: 'Manicure · olive and gold chrome with rings.', keywords: 'olive green gold chrome almond manicure' },
+    { type: 'Art Work', title: 'Lime and teal gem stilettos', url: 'art_work.html#art-11', text: 'Manicure · lime green chrome with teal gems.', keywords: 'lime green teal gems silver stiletto manicure' },
+    { type: 'Art Work', title: 'Burgundy French stilettos', url: 'art_work.html#art-12', text: 'Manicure · burgundy tips with silver bar detail.', keywords: 'burgundy wine red french stiletto silver manicure' },
+    { type: 'Art Work', title: 'Black French mix', url: 'art_work.html#art-13', text: 'Manicure · nude set with black French tips and charms.', keywords: 'black french mix nude charms manicure' },
+    { type: 'Art Work', title: 'Black and white pattern nails', url: 'art_work.html#art-14', text: 'Manicure · nude base with black and white pattern.', keywords: 'black white pattern animal print nude manicure' },
+    { type: 'Art Work', title: 'Red ombré nails', url: 'art_work.html#art-15', text: 'Manicure · red and pink ombré short set.', keywords: 'red pink ombre gradient short manicure' },
+    { type: 'Art Work', title: 'Classic white manicure', url: 'art_work.html#art-16', text: 'Manicure · clean milky white short nails.', keywords: 'classic white milky simple short manicure' },
+    { type: 'Art Work', title: 'French pedicure — pink gloves', url: 'art_work.html#art-17', text: 'Pedicure · pink base with white French tips.', keywords: 'french pedicure toes white pink' },
+    { type: 'Art Work', title: 'French pedicure — close-up', url: 'art_work.html#art-18', text: 'Pedicure · natural pink with crisp white tips.', keywords: 'french pedicure toes white natural' },
+    { type: 'Art Work', title: 'French pedicure — sandals', url: 'art_work.html#art-19', text: 'Pedicure · white French tips in black sandals.', keywords: 'french pedicure toes white sandals' },
+    { type: 'Art Work', title: 'French pedicure — flower sandals', url: 'art_work.html#art-20', text: 'Pedicure · white French tips with floral flip-flops.', keywords: 'french pedicure toes white flower flip flops' }
+  ];
+
 
 
 
