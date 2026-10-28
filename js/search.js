@@ -201,7 +201,7 @@ const TYPE_BOOST = { Page: 8, Service: 6, Info: 3 };
     });
   }
 
-  
+
   /* ---- 5. Open / close the panel -------------------------------------- */
   function openPanel() {
     panel.hidden = false;
@@ -220,6 +220,17 @@ const TYPE_BOOST = { Page: 8, Service: 6, Info: 3 };
   openBtn.addEventListener('click', () => (panel.hidden ? openPanel() : closePanel()));
   closeBtn.addEventListener('click', closePanel);
   input.addEventListener('input', runSearch);
+
+  // Enter in the box opens the best match instead of reloading the page.
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const first = results.querySelector('a');
+    if (first) window.location.href = first.getAttribute('href');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
+
 
 
 
