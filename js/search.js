@@ -126,6 +126,26 @@
   const closeBtn = panel.querySelector('[data-search-close]');
   const form    = panel.querySelector('[data-search-form]');
 
+  /* ---- 3. Helpers ------------------------------------------------------ */
+  // Lower-case and strip accents so "ombre" finds "ombré".
+  const normalise = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
+  // Escape text before it goes into innerHTML (titles/text are ours, but the
+  // highlighted query is typed by the visitor).
+  const escapeHtml = (s) => s.replace(/[&<>"']/g, (c) =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  // Wrap each searched word in <mark> inside an (already plain) string.
+  function highlight(text, words) {
+    let safe = escapeHtml(text);
+    words.forEach((w) => {
+      if (!w) return;
+      const re = new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      safe = safe.replace(re, '<mark>$1</mark>');
+    });
+    return safe;
+  }
+
 
 
 
