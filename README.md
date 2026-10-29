@@ -253,6 +253,9 @@ Worked page by page to redo the code so the JavaScript is working throughout all
   folder) so the grid loads fast while the lightbox loads the full-size file.
 -The Manicures/Pedicures headings are now proper `<section>`s with ids.
 
+**Webiste Map** 
+Map added using Leaflet: they were created/added may using Library JS. The Maps run on a website link/ live server on VS Code. Renders a blocked when running locally  
+
 **Rubric check list: Part 1–3**
 
  *SEO:*
