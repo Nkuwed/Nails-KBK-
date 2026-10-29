@@ -228,97 +228,82 @@ Adding images to art.html
 Fixing enquiry form and contact form, to tell the customers when they when missed a block to fill it in. 
 Worked page by page to redo the code so the JavaScript is working throughout all pages.
 
-### Part 3 — 22 October 2026 (search, lightbox and rubric review)
+### Part 3 — 24 October 2026 -29 October 2026 (search, lightbox and rubric review)
 
 **Requested changes**
 
-- **Site-wide search bar (new `js/search.js`).** Added a magnifier button to the
-  header of all six pages (`index`, `about`, `services`, `enquiry`, `contact`,
-  `art_work`). It opens a search panel under the header (also opened with the
-  `/` key). Typing searches an index of every page, service (with prices),
-  policy, opening hours/location/contact detail and all 20 Art Work photos.
-Every typed word must match (AND search), results are ranked (title →
-  keywords → description, pages/services above photos), matches are
-  highlighted, and the panel is keyboard friendly (Enter opens the best match,
-  ↑/↓ move through results, Esc closes). Art Work results deep-link to
-  `art_work.html#art-N`, which opens that photo in the lightbox. The panel has
-  its own styles in section 16 of `style.css` and a `role="search"` form with a
-  label for screen readers.
-- **Art Work lightbox (new `js/lightbox.js`).** Every photo on `art_work.html`
-  is now a `<button>` that opens a full-screen viewer showing the large image
-  with its caption. The viewer is **scrollable**: "Full size" (or clicking the
+**Site-wide search bar (new `js/search.js`).**
+- Added a magnifier button to the
+  header of all six pages. Opens a search panel under the header. Typing searches an index of every page, service (with prices), policy, opening hours/location/contact detail and all 20 Art Work photos.
+-Every typed word must match, results are ranked (title → keywords → description, pages/services above photos), matches are highlighted, and the panel is keyboard friendly. Art Work results deep-link to it opens that photo in the lightbox. The panel has its own styles in section 16 of `style.css` and a `role="search"` form with a label for screen readers.
+
+ **Art Work lightbox (new `js/lightbox.js`).**
+- Every photo on `art_work.html` is now a `<button>` that opens a full-screen viewer showing the large image
+  with its caption.
+  -The viewer is **scrollable**: "Full size" (or clicking the
   photo) shows the image at its real pixel size inside a scroll area so the
   visitor can scroll/drag around it in both directions; "Fit to screen"
-  returns to the whole photo. Also added Previous/Next buttons, ← → keys,
-  swipe on touch screens, Esc / × / backdrop-click to close, a "n / 20"
-  counter, a keyboard focus trap, focus returned to the photo on close, and the
-  page behind no longer scrolls while it is open.
-- **Gallery images.** Replaced the 20 generic photos' `alt` text
+  returns to the whole photo.
+  
+  **Gallery images.**
+- Replaced the 20 generic photos' `alt` text
   ("Nail art design", "Slight mix of colours") with accurate descriptions;
   added `loading="lazy"`, `width`/`height` (no layout jump) and responsive
   `srcset` + `sizes` thumbnails (480 px / 960 px, new `images/portfolio/thumbs/`
   folder) so the grid loads fast while the lightbox loads the full-size file.
-The Manicures/Pedicures headings are now proper `<section>`s with ids.
+-The Manicures/Pedicures headings are now proper `<section>`s with ids.
 
-**Rubric review — fixes made so the site meets the Part 1–3 rubric**
+**Rubric check list: Part 1–3**
 
-- *SEO:* added `<meta name="keywords">`, `author`, `robots` and `referrer` tags
-  to every page; added `robots.txt` and `sitemap.xml`; renamed gallery images
-  from names like `huh.jpg`, `T1.png`, `mix 3.jpg` to descriptive, hyphenated
-  names (e.g. `red-grid-i-love-me-nails.jpg`) and updated every reference.
-- *Forms — enquiry:* rewrote validation (name, South African phone number,
-  email, service, date, message length), live error messages that update as
+ *SEO:*
+  added: `<meta name="keywords">`, `author`, `robots` and `referrer` tags
+  to every page;
+  added `robots.txt` and `sitemap.xml`; renamed gallery and updated every reference.
+  
+ *Forms — enquiry:*
+- rewrote validation, live error messages that update as
   the visitor corrects a field, `aria-invalid`/`aria-describedby` for screen
-  readers, the date picker blocks past dates and Sundays (studio is closed),
-  the submit uses `fetch()` (AJAX, no page reload) and the reply now shows an
+  readers, the date picker blocks past dates and Sundays (studio is closed).
+  -The submit uses `fetch()` (AJAX, no page reload) and the reply now shows an
   estimate, the 50 % deposit amount and availability for the chosen
-  service/date. Removed the stray `>` from the "Reference Image" label.
-- *Forms — contact:* added the phone number and "Type of message" fields the
+  service/date.
+  
+ *Forms — contact:*
+- added the phone number and "Type of message" fields the
   brief asks for, the same validation, and on a valid submit the details are
-  compiled into an email addressed to the studio (`mailto:` link built in
-  `main.js`, recipient set once in the `CONTACT_EMAIL` constant).
-- *Interactive elements:* the enquiry page policies are now an accordion
-  (`<details>`/`<summary>`) with open/close animation; added a live text search
+  compiled into an email addressed to the studio.
+  
+- *Interactive elements:*
+- the enquiry page policies are now an accordion with open/close animation; added a live text search
   box to the Services page that works together with the category chips.
-- *Services page:* fixed an unbalanced `</div>` and a second
-  `data-service-grid` outside `<main>`; the three price-list/policy posters now
-  sit in their own labelled section with alt text and correct proportions
-  (they were forced to 400×400); added missing/incorrect `alt` text and swapped
+  
+- *Services page:*
+- fixed an unbalanced `</div>` and a second `data-service-grid` outside `<main>`; the three price-list/policy posters now
+  sit in their own labelled section with alt text and correct proportions; added missing/incorrect `alt` text and swapped
   the Pedicure card's manicure photo for a pedicure photo.
-- *Links:* WhatsApp and call links were inconsistent (`wa.me/0820951275`,
+  
+ *Links:*
+- WhatsApp and call links were inconsistent (`wa.me/0820951275`,
   `tel:+0820951275`, `27000000000` placeholders) — all now use
   `wa.me/27820951275` and `tel:+27820951275`.
-- *About page:* removed a stray image that sat outside any section above the
+
+   *About page:* 
+-removed a stray image that sat outside any section above the
   page heading.
-- *README:* rebuilt this README (it contained duplicated sections and listed a
-  `form-validation.js` file that does not exist); added student details, goals,
-  features, sitemap, per-part notes, testing evidence and an updated reference
-  list. The changelog is kept here and mirrored in `changelog.md` and
-  `Changelog.docx`.
-
-**Known items still to do (need the student's input)**
-
-- Set the real studio email in `CONTACT_EMAIL` (`js/main.js`) — it is a
-  placeholder (`keora@example.com`).
-- Deploy on GitHub Pages/Netlify (Part 3 requirement) and, if the live address
-  differs from `https://nkuwed.github.io/WEDE5020-kbk-main-PoE/KBK/`, update the
-URLs in `sitemap.xml` and `robots.txt`.
-- The contact page map is a single embedded Google Map (Kibler Park). The
-  brief asks for more than one location — add a second real location (e.g. a
-  mobile-service area or partner venue) if the studio has one.
+  
 
 ## References
 
 Glamour South Africa, 2025. Nailed it: 9 local nail artists who are changing the game. [online] Available at: [Accessed 27 July 2026].
-KreatedByKeora, [s.a.]. TikTok profile. [TikTok] Available at: [Accessed 27 July 2026].
+KreatedByKeora, 2026. TikTok profile. [TikTok] Available at: [Accessed 27 July 2026].
 All images are taken from KreatedByKeora's main business account on Instagram <https://www.instagram.com/kreatedbykeora/> [Accessed 28 July 2026].
 
 **Part 2 additions**
 
-Google Fonts, [s.a.]. Fraunces. [online] Available at: <https://fonts.google.com/specimen/Fraunces> [Accessed 10 September 2026].
-Google Fonts, [s.a.]. Manrope. [online] Available at: <https://fonts.google.com/specimen/Manrope> [Accessed 10 September 2026].
-MDN Web Docs, [s.a.]. CSS Grid Layout. [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout> [Accessed 10 September 2026].
-MDN Web Docs, [s.a.]. Using media queries. [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries> [Accessed 10 September 2026].
+Google Fonts, 2026. Fraunces. [online] Available at: <https://fonts.google.com/specimen/Fraunces> [Accessed 10 September 2026].
+Google Fonts, 2026. Manrope. [online] Available at: <https://fonts.google.com/specimen/Manrope> [Accessed 10 September 2026].
+MDN Web Docs, 2026. CSS Grid Layout. [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout> [Accessed 10 September 2026].
+MDN Web Docs, 2026. Using media queries. [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries> [Accessed 10 September 2026].
 OpenAI, 2026. ChatGPT response to prompt regarding the changelog and what it needs to contain. [AI language model online] Available at: <https://chatgpt.com/> [Accessed 12 September 2026].
 
 **Part 3 additions**
@@ -326,9 +311,9 @@ OpenAI, 2026. ChatGPT response to prompt regarding the changelog and what it nee
 Tiiny Tips, 2024. How to Add JavaScript to HTML. [online] Available at: <https://www.youtube.com/watch?v=lvvXw3HncDM> [Accessed 10 October 2026].
 Bro Code, 2024. JavaScript tutorial for beginners. [online] Available at: <https://youtu.be/Ihy0QziLDf0> [Accessed 10 October 2026].
 Anthropic, 2026. Claude (Sonnet 5.5) response to prompts requesting a site-wide search bar, an Art Work lightbox and a review of the site against the WEDE5020 rubric. [AI language model online] Available at: <https://claude.ai/> [Accessed 22 October 2026].
-MDN Web Docs, [s.a.]. The Details disclosure element. [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details> [Accessed 22 October 2026].
-MDN Web Docs, [s.a.]. Fetch API. [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API> [Accessed 22 October 2026].
-MDN Web Docs, [s.a.]. Responsive images. [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/HTML/Responsive_images> [Accessed 22 October 2026].
-W3C, [s.a.]. Modal Dialog Pattern, WAI-ARIA Authoring Practices Guide. [online] Available at: <https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/> [Accessed 22 October 2026].
-Sitemaps.org, [s.a.]. Sitemaps XML format. [online] Available at: <https://www.sitemaps.org/protocol.html> [Accessed 22 October 2026].
-Google Search Central, [s.a.]. Introduction to robots.txt. [online] Available at: <https://developers.google.com/search/docs/crawling-indexing/robots/intro> [Accessed 22 October 2026].
+MDN Web Docs, 2026. The Details disclosure element. [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details> [Accessed 17 October 2026].
+MDN Web Docs, 2026. Fetch API. [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API> [Accessed 23 October 2026].
+MDN Web Docs, 2026. Responsive images. [online] Available at: <https://developer.mozilla.org/en-US/docs/Web/HTML/Responsive_images> [Accessed 22 October 2026].
+W3C, 2026. Modal Dialog Pattern, WAI-ARIA Authoring Practices Guide. [online] Available at: <https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/> [Accessed 22 October 2026].
+Sitemaps.org, 2026. Sitemaps XML format. [online] Available at: <https://www.sitemaps.org/protocol.html> [Accessed 20 October 2026].
+Google Search Central, 2026. Introduction to robots.txt. [online] Available at: <https://developers.google.com/search/docs/crawling-indexing/robots/intro> [Accessed 25 October 2026].
