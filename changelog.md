@@ -83,7 +83,7 @@ Adding images to art.html
 Fixing enquiry form and contact form, to tell the customers when they when missed a block to fill it in. 
 Worked page by page to redo the code so the JavaScript is working throughout all pages.
 
-### Part 3 — 22 October 2026 (search, lightbox and rubric review)
+### Part 3 — 24 October 2026 (search, lightbox and rubric review)
 
 - **Site-wide search bar (for new `js/search.js`).**
 -  Added a magnifier button to the header of all six pages. It opens a search panel under the header.
