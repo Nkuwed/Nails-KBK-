@@ -1,0 +1,7 @@
+# robots.txt — KreatedByKeora
+# All crawlers may index the whole site; the sitemap lists every page.
+User-agent: *
+Allow: /
+Disallow: /docs/
+
+Sitemap: https://nkuwed.github.io/Nails-KBK-/
