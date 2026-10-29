@@ -2,7 +2,7 @@
 
 **WEDE5020 — Web Development (Introduction) · Portfolio of Evidence (Parts 1–3)**
 **Student:** Nonkululeko Sibiya · **Student number:** ST10502108
-**Repository:** <https://github.com/Nkuwed/WEDE5020-kbk-main-PoE>
+**Repository:** <https://github.com/Nkuwed/Nails-KBK->
 
 ## Project overview
 
