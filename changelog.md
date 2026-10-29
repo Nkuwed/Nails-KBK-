@@ -108,7 +108,7 @@ Worked page by page to redo the code so the JavaScript is working throughout all
   folder) so the grid loads fast while the lightbox loads the full-size file.
 -The Manicures/Pedicures headings are now proper `<section>`s with ids.
 
-**Rubric review — fixes made so the site meets the Part 1–3 rubric**
+**Rubric checklist Part 1–3**
 
 - *SEO:* added `<meta name="keywords">`, `author`, `robots` and `referrer` tags
   to every page; added `robots.txt` and `sitemap.xml`; renamed gallery images
